@@ -1,5 +1,4 @@
-﻿using GlobalEnums;
-using HarmonyLib;
+﻿using HarmonyLib;
 
 namespace CollectionPin.Patchs
 {
@@ -19,9 +18,18 @@ namespace CollectionPin.Patchs
             }
         }
 
-        [HarmonyPatch(nameof(GameMap.EnableUnlockedAreas))]
-        [HarmonyPrefix]
-        private static void EnableUnlockedAreas()
+        [HarmonyPatch(nameof(GameMap.TryOpenQuickMap))]
+        [HarmonyPostfix]
+        private static void TryOpenQuickMap(bool __result)
+        {
+            if (!__result)
+                return;
+            manager.CheckPinActive();
+        }
+
+        [HarmonyPatch(nameof(GameMap.WorldMap))]
+        [HarmonyPostfix]
+        private static void WorldMap()
         {
             manager.CheckPinActive();
         }
