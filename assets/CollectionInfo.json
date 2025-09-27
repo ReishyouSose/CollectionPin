@@ -2,7 +2,7 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Belltown",
         "Type": 2,
         "X": -1001.23071,
         "Y": -5.59011
@@ -17,13 +17,13 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Peak_06",
         "Type": 0,
         "X": -1014.50653,
         "Y": 8.831066
       },
       {
-        "GetBool": "",
+        "GetBool": "Peak_04c",
         "Type": 0,
         "X": -1021.64319,
         "Y": 6.427639
@@ -34,25 +34,25 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Slab_17",
         "Type": 0,
         "X": -1008.98212,
         "Y": 8.964811
       },
       {
-        "GetBool": "",
+        "GetBool": "Slab_Cell_Quiet",
         "Type": 2,
         "X": -1009.06311,
         "Y": 5.71455
       },
       {
-        "GetBool": "",
+        "GetBool": "Weaver Totem Slab_Bottom",
         "Type": 8,
         "X": -1007.71283,
         "Y": 4.165616
       },
       {
-        "GetBool": "",
+        "GetBool": "Peak_01",
         "Type": 1,
         "X": -1011.71332,
         "Y": 6.8164444
@@ -63,13 +63,13 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Psalm Cylinder Hang",
         "Type": 11,
         "X": -1000.04974,
         "Y": 9.786545
       },
       {
-        "GetBool": "",
+        "GetBool": "Hang_03_top",
         "Type": 1,
         "X": -1001.32239,
         "Y": 12.56049
@@ -80,19 +80,19 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Arborium_09",
         "Type": 1,
         "X": -995.9054,
         "Y": 9.002251
       },
       {
-        "GetBool": "",
+        "GetBool": "Arborium_05",
         "Type": 2,
         "X": -994.660767,
         "Y": 9.664442
       },
       {
-        "GetBool": "",
+        "GetBool": "Arborium_04",
         "Type": 4,
         "X": -993.337952,
         "Y": 8.791954
@@ -103,13 +103,13 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Song_09",
         "Type": 0,
         "X": -999.554932,
         "Y": 7.28785324
       },
       {
-        "GetBool": "",
+        "GetBool": "Cog_07",
         "Type": 1,
         "X": -995.392639,
         "Y": 5.44261
@@ -131,25 +131,25 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Psalm Cylinder Librarian",
         "Type": 11,
         "X": -989.8244,
         "Y": 7.12663841
       },
       {
-        "GetBool": "",
+        "GetBool": "Library_05",
         "Type": 0,
         "X": -989.94165,
         "Y": 5.792944
       },
       {
-        "GetBool": "",
+        "GetBool": "Psalm Cylinder Library Roof",
         "Type": 11,
         "X": -988.891235,
         "Y": 6.49257469
       },
       {
-        "GetBool": "",
+        "GetBool": "Library_08",
         "Type": 2,
         "X": -988.508057,
         "Y": 6.49257469
@@ -160,31 +160,37 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Psalm Cylinder Ward",
+        "Type": 11,
+        "X": -1001.5,
+        "Y": 1.76
+      },
+      {
+        "GetBool": "Under_08",
         "Type": 2,
         "X": -1001.37018,
         "Y": 1.37966537
       },
       {
-        "GetBool": "",
+        "GetBool": "Under_10",
         "Type": 1,
         "X": -998.7941,
         "Y": -0.060956955
       },
       {
-        "GetBool": "",
+        "GetBool": "Under_19b",
         "Type": 3,
         "X": -996.9781,
         "Y": -0.0276575089
       },
       {
-        "GetBool": "",
+        "GetBool": "Library_11b",
         "Type": 1,
         "X": -993.82605,
         "Y": -0.244245529
       },
       {
-        "GetBool": "",
+        "GetBool": "Bone Record Understore_Map_Room",
         "Type": 7,
         "X": -1004.68311,
         "Y": -0.101977348
@@ -195,43 +201,43 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Wisp_05",
         "Type": 3,
         "X": -998.013733,
         "Y": -1.05839348
       },
       {
-        "GetBool": "",
+        "GetBool": "Bone Record Wisp Top",
         "Type": 7,
         "X": -995.3393,
         "Y": -0.8862572
       },
       {
-        "GetBool": "",
+        "GetBool": "Wisp_07",
         "Type": 0,
         "X": -992.2559,
         "Y": -1.88698864
       },
       {
-        "GetBool": "",
+        "GetBool": "Greymoor_02",
         "Type": 1,
         "X": -985.925537,
         "Y": -3.21470737
       },
       {
-        "GetBool": "",
+        "GetBool": "Bone Record Greymoor_flooded_corridor",
         "Type": 7,
         "X": -989.3446,
         "Y": -5.46934748
       },
       {
-        "GetBool": "",
+        "GetBool": "Halfway_01",
         "Type": 2,
         "X": -992.9389,
         "Y": -4.87349272
       },
       {
-        "GetBool": "",
+        "GetBool": "Greymoor_16",
         "Type": 2,
         "X": -994.7344,
         "Y": -6.082841
@@ -242,19 +248,19 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Shadow_20",
         "Type": 2,
         "X": -989.49646,
         "Y": 1.79498291
       },
       {
-        "GetBool": "",
+        "GetBool": "Shadow_13",
         "Type": 0,
         "X": -978.7924,
         "Y": 3.594306
       },
       {
-        "GetBool": "",
+        "GetBool": "Shadow_27",
         "Type": 2,
         "X": -980.4118,
         "Y": 4.262703
@@ -265,7 +271,7 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Aqueduct_05",
         "Type": 3,
         "X": -974.245361,
         "Y": 7.475876
@@ -276,31 +282,31 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Bone_East_25",
         "Type": 2,
         "X": -979.4664,
         "Y": -7.74179363
       },
       {
-        "GetBool": "",
+        "GetBool": "Bone_East_20",
         "Type": 0,
         "X": -985.289856,
         "Y": -11.613759
       },
       {
-        "GetBool": "",
+        "GetBool": "Bone Record Bone_East_14",
         "Type": 7,
         "X": -982.3698,
         "Y": -12.448082
       },
       {
-        "GetBool": "",
+        "GetBool": "Bone_East_LavaChallenge|Heart Piece (1)",
         "Type": 0,
         "X": -979.8211,
         "Y": -12.3981314
       },
       {
-        "GetBool": "",
+        "GetBool": "Weaver Record Sprint_Challenge",
         "Type": 10,
         "X": -977.2162,
         "Y": -13.2119465
@@ -311,7 +317,7 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Ant_20",
         "Type": 2,
         "X": -989.6532,
         "Y": -9.231745
@@ -322,31 +328,31 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Dock_03c",
         "Type": 1,
         "X": -988.280151,
         "Y": -12.9961357
       },
       {
-        "GetBool": "",
+        "GetBool": "Dock_03|Collectable Item Pickup",
         "Type": 3,
         "X": -990.2646,
         "Y": -12.4797115
       },
       {
-        "GetBool": "",
+        "GetBool": "Bone_East_13",
         "Type": 1,
         "X": -996.070862,
         "Y": -13.0993528
       },
       {
-        "GetBool": "",
+        "GetBool": "Dock_13",
         "Type": 2,
         "X": -996.208069,
         "Y": -15.4948645
       },
       {
-        "GetBool": "",
+        "GetBool": "Dock_08",
         "Type": 0,
         "X": -998.8725,
         "Y": -11.0110474
@@ -357,13 +363,13 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Bone_18",
         "Type": 2,
         "X": -1005.58215,
         "Y": -7.941427
       },
       {
-        "GetBool": "",
+        "GetBool": "Bone_07",
         "Type": 3,
         "X": -1003.384,
         "Y": -9.604156
@@ -374,49 +380,49 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Weaver Totem Witch",
         "Type": 8,
         "X": -1003.50726,
         "Y": -6.84345531
       },
       {
-        "GetBool": "",
+        "GetBool": "Shellwood_01",
         "Type": 5,
         "X": -1003.8938,
         "Y": -5.291089
       },
       {
-        "GetBool": "",
+        "GetBool": "Shellwood_02",
         "Type": 5,
         "X": -1004.15363,
         "Y": -4.864583
       },
       {
-        "GetBool": "",
+        "GetBool": "Shellwood_10",
         "Type": 5,
         "X": -1006.13678,
         "Y": -4.01440334
       },
       {
-        "GetBool": "",
+        "GetBool": "Shellwood_15",
         "Type": 5,
         "X": -1006.57007,
         "Y": -2.51424885
       },
       {
-        "GetBool": "",
+        "GetBool": "Shellwood_20",
         "Type": 5,
         "X": -1007.9054,
         "Y": -4.25176239
       },
       {
-        "GetBool": "",
+        "GetBool": "Shellwood_26",
         "Type": 5,
         "X": -1005.55627,
         "Y": -5.50166368
       },
       {
-        "GetBool": "",
+        "GetBool": "Shellwood_14",
         "Type": 0,
         "X": -1006.02075,
         "Y": -4.78803635
@@ -427,19 +433,19 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Coral_32",
         "Type": 3,
         "X": -1010.78326,
         "Y": 0.00479793549
       },
       {
-        "GetBool": "",
+        "GetBool": "Coral_02",
         "Type": 2,
         "X": -1014.61389,
         "Y": -3.22649956
       },
       {
-        "GetBool": "",
+        "GetBool": "Coral_19b",
         "Type": 0,
         "X": -1018.18115,
         "Y": -2.748044
@@ -450,7 +456,7 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Song_19_entrance",
         "Type": 1,
         "X": -1007.1167,
         "Y": 2.17944431
@@ -461,7 +467,7 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Coral_23",
         "Type": 2,
         "X": -1019.3324,
         "Y": 1.01537609
@@ -472,49 +478,49 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Seal Chit Ward Corpse",
         "Type": 9,
         "X": -1013.17749,
         "Y": -8.801504
       },
       {
-        "GetBool": "",
+        "GetBool": "pd|mosstownAspidBerryCollected",
         "Type": 4,
         "X": -1009.69153,
         "Y": -8.904056
       },
       {
-        "GetBool": "",
+        "GetBool": "Bone_11b",
         "Type": 1,
         "X": -1011.07532,
         "Y": -10.0208235
       },
       {
-        "GetBool": "",
+        "GetBool": "Weaver Totem Bonetown_upper_room",
         "Type": 8,
         "X": -1014.092,
         "Y": -10.3040085
       },
       {
-        "GetBool": "",
+        "GetBool": "pd|bonetownAspidBerryCollected",
         "Type": 4,
         "X": -1011.85358,
         "Y": -10.4096479
       },
       {
-        "GetBool": "",
+        "GetBool": "Tut_01b",
         "Type": 4,
         "X": -1012.62634,
         "Y": -11.96027
       },
       {
-        "GetBool": "",
+        "GetBool": "Tut_02",
         "Type": 4,
         "X": -1014.328,
         "Y": -12.7441187
       },
       {
-        "GetBool": "",
+        "GetBool": "pd|bonegraveAspidBerryCollected",
         "Type": 4,
         "X": -1017.806,
         "Y": -11.02588
@@ -525,31 +531,31 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Crawl_02",
         "Type": 0,
         "X": -1016.6427,
         "Y": -9.624106
       },
       {
-        "GetBool": "",
+        "GetBool": "Crawl_03",
         "Type": 6,
         "X": -1017.18445,
         "Y": -9.965464
       },
       {
-        "GetBool": "",
+        "GetBool": "Crawl_09",
         "Type": 2,
         "X": -1018.61774,
         "Y": -10.1987238
       },
       {
-        "GetBool": "",
+        "GetBool": "Crawl_07",
         "Type": 6,
         "X": -1019.85461,
         "Y": -9.859772
       },
       {
-        "GetBool": "",
+        "GetBool": "Crawl_09",
         "Type": 6,
         "X": -1017.93304,
         "Y": -8.554058
@@ -560,25 +566,25 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Weave_11",
         "Type": 1,
         "X": -1011.74176,
         "Y": -13.21125
       },
       {
-        "GetBool": "",
+        "GetBool": "Weave_03",
         "Type": 4,
         "X": -1013.10724,
         "Y": -13.6707468
       },
       {
-        "GetBool": "",
+        "GetBool": "Weaver Record Weave_08",
         "Type": 10,
         "X": -1008.02637,
         "Y": -12.4065542
       },
       {
-        "GetBool": "",
+        "GetBool": "Weave_05b",
         "Type": 0,
         "X": -1006.5993,
         "Y": -12.8031969

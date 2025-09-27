@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using GlobalEnums;
+using HarmonyLib;
 
 namespace CollectionPin.Patchs
 {
@@ -16,6 +17,13 @@ namespace CollectionPin.Patchs
                 manager = new CollectionPinManager();
                 manager.Create(__instance);
             }
+        }
+
+        [HarmonyPatch(nameof(GameMap.EnableUnlockedAreas))]
+        [HarmonyPrefix]
+        private static void EnableUnlockedAreas()
+        {
+            manager.CheckPinActive();
         }
     }
 }

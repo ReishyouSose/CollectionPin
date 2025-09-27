@@ -1,5 +1,6 @@
 ﻿using GlobalEnums;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -48,7 +49,13 @@ namespace CollectionPin
 
             ReadJson();
         }
-
+        public void CheckPinActive()
+        {
+            foreach (Transform trans in collectionTransform)
+            {
+                trans.gameObject.GetComponent<CollectionLabel>().CheckActive();
+            }
+        }
         public void HandleInput(bool placeMode, Transform pointer)
         {
             if (placeMode && Input.GetKeyDown(KeyCode.Delete))
@@ -62,10 +69,8 @@ namespace CollectionPin
                         continue;
                     GameObject obj = trans.gameObject;
                     CollectionLabel label = obj.GetComponent<CollectionLabel>();
-                    foreach (var (map, info) in zonePins)
+                    foreach (var (_, info) in zonePins)
                     {
-                        if (map != label.Unlock)
-                            continue;
                         for (int i = 0; i < info.Pins.Count; i++)
                         {
                             var pin = info.Pins[i];
@@ -141,7 +146,7 @@ namespace CollectionPin
                 }
                 int pinType = (int)type.Value;
                 int counter = Counter;
-                var local = AddPinToMap(key, pinType, counter, new Vector3(pos.x, pos.y, pinTemplate.transform.position.z), false);
+                var local = AddPinToMap(key, null, pinType, counter, new Vector3(pos.x, pos.y, pinTemplate.transform.position.z), false);
                 info.Pins.Add(new MapPinInfo()
                 {
                     Type = pinType,
@@ -169,16 +174,17 @@ namespace CollectionPin
                 {
                     int counter = Counter;
                     pin.Index = counter;
-                    AddPinToMap(mapUnlock, pin.Type, counter, new Vector3(pin.X, pin.Y, z), true);
+
+                    AddPinToMap(mapUnlock, pin.CollectedFunc(), pin.Type, counter, new Vector3(pin.X, pin.Y, z), true);
                 }
             }
         }
 
-        private Vector3 AddPinToMap(string zoneName, int pinType, int counter, Vector3 pos, bool local)
+        private Vector3 AddPinToMap(string mapUnlock, Func<PlayerData,SceneData, bool>? collected, int pinType, int counter, Vector3 pos, bool local)
         {
             GameObject newPin = UObj.Instantiate(pinTemplate, collectionTransform);
             var label = newPin.AddComponent<CollectionLabel>();
-            label.SetInfo(pinType, counter, zoneName);
+            label.SetInfo(mapUnlock, pinType, counter, collected);
             newPin.name = ((PinType)pinType).ToString();
             var sr = newPin.GetComponent<SpriteRenderer>();
             sr.sprite = sprites[pinType];
