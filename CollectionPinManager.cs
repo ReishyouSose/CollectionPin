@@ -49,9 +49,9 @@ namespace CollectionPin
             ReadJson();
         }
 
-        public void HandleInput(Transform pointer)
+        public void HandleInput(bool placeMode, Transform pointer)
         {
-            if (Input.GetKeyDown(KeyCode.Delete))
+            if (placeMode && Input.GetKeyDown(KeyCode.Delete))
             {
                 var pos = pointer.position;
                 var v2 = new Vector2(pos.x, pos.y);
@@ -81,8 +81,8 @@ namespace CollectionPin
             }
 
             bool ctrl = Input.GetKey(KeyCode.LeftControl);
-            bool alt = Input.GetKey(KeyCode.LeftAlt);
-            if (!ctrl && !alt)
+            bool shift = Input.GetKey(KeyCode.LeftShift);
+            if (!ctrl && !shift)
                 return;
 
             if (Input.GetKeyDown(KeyCode.Alpha0))
@@ -93,7 +93,7 @@ namespace CollectionPin
                     File.WriteAllText(Path.Combine(assetPath, "CollectionInfo.json"), json);
                     Debug.Log("Save collection, count " + zonePins.Count);
                 }
-                else if (alt)
+                else if (shift)
                 {
                     foreach (Transform obj in collectionTransform)
                     {
@@ -105,16 +105,17 @@ namespace CollectionPin
                 return;
             }
 
+            if (!placeMode)
+                return;
+
             PinType? type = null;
             int alpha = 49;
-            if (alt)
-                alpha += 6;
             for (int i = 0; i < 6; i++)
             {
                 int j = i + alpha;
                 if (Input.GetKeyDown((KeyCode)j))
                 {
-                    type = (PinType)(j - 49);
+                    type = (PinType)(j - 49 + (shift ? 6 : 0));
                     break;
                 }
             }
