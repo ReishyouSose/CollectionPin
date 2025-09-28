@@ -21,38 +21,115 @@ namespace CollectionPin
         Cylinder,//音筒
     }
     [Serializable]
-    public class MapPinInfo
+    public class MapPinInfo : MonoBehaviour
     {
+        private enum DataValidType
+        {
+            None,
+            PlayerData,
+            SceneData,
+            Relic
+        }
         public string GetBool { get; set; } = string.Empty;
-        public int Type { get; set; }
+
+        [JsonProperty("Type")]
+        public int PinType { get; set; }
         public float X { get; set; }
         public float Y { get; set; }
+
+        [JsonIgnore]
+        public bool Collected;
+
+        [JsonIgnore]
+        public string MapUnlock = string.Empty;
+
+        [JsonIgnore]
+        public string Key = string.Empty;
+
+        [JsonIgnore]
+        public string ID = string.Empty;
 
         [JsonIgnore]
         public int Index;
 
         [JsonIgnore]
-        public Vector2 Pos => new Vector2(X, Y);
-        public Func<PlayerData, SceneData, bool>? CollectedFunc()
+        public bool FirstLoad;
+
+        [JsonIgnore]
+        private DataValidType ValidType;
+
+        public bool IsMatch(string key, string id) => key == Key && id == ID;
+        public void CheckActive() => gameObject.SetActive(ShouldActive());
+        public bool ShouldActive()
         {
-            if (7 <= Type && Type <= 11)
+            if (Collected)
+                return false;
+
+            PlayerData pd = PlayerData.instance;
+            if (!pd.GetBool(MapUnlock))
+                return false;
+
+            switch (ValidType)
             {
-                string target = GetBool;
-                return new Func<PlayerData, SceneData, bool>((pd, _) => pd.Relics.GetData(target).IsCollected);
+                case DataValidType.SceneData:
+                    var scene = SceneData.instance.persistentBools;
+                    if (!scene.TryGetValue(Key, ID, out var data))
+                    {
+                        Debug.Log($"{Key} {ID} not in scene dict");
+                        return true;
+                    }
+                    if (!data.Value)
+                        return true;
+                    Debug.Log($"{Key} {ID} collected");
+                    Collected = true;
+                    return false;
+                case DataValidType.PlayerData:
+                    if (pd.GetBool(Key))
+                    {
+                        Collected = true;
+                        Debug.Log($"{Key} collected");
+                        return false;
+                    }
+                    break;
+                case DataValidType.Relic:
+                    if (pd.Relics.GetData(GetBool).IsCollected)
+                    {
+                        Collected = true;
+                        Debug.Log($"{GetBool} collected");
+                        return false;
+                    }
+                    break;
+            }
+            return true;
+        }
+        public void AnalysisData(MapPinInfo info)
+        {
+            MapUnlock = info.MapUnlock;
+            GetBool = info.GetBool;
+            PinType = info.PinType;
+            if (7 <= PinType && PinType <= 11)
+            {
+                ValidType = DataValidType.Relic;
+                return;
             }
 
             if (GetBool.StartsWith("pd|"))
             {
-                string target = GetBool[3..];
-                return new Func<PlayerData, SceneData, bool>((pd, _) => pd.GetBool(target));
+                ValidType = DataValidType.PlayerData;
+                Key = GetBool[3..];
+                return;
             }
 
             if (string.IsNullOrEmpty(GetBool))
-                return null;
+            {
+                Debug.Log("Empty Getbool");
+                return;
+            }
 
+            ValidType = DataValidType.SceneData;
             string[] keyAndOverride = GetBool.Split('|');
-            string key = keyAndOverride[0];
-            string id = keyAndOverride.Length == 2 ? keyAndOverride[1] : Type switch
+            Key = keyAndOverride[0];
+            ID = keyAndOverride.Length == 2 ? keyAndOverride[1] : PinType switch
             {
                 0 => "Heart Piece",
                 1 => "Silk Spool",
@@ -64,17 +141,7 @@ namespace CollectionPin
                 _ => string.Empty,
                 //遗物有专门的数据
             };
-            return new Func<PlayerData, SceneData, bool>((_, sd)
-                => SceneDataCheck(sd, (PinType)Type, key, id));
-        }
-        private static bool SceneDataCheck(SceneData sd, PinType pinType, string key, string id)
-        {
-            if (sd.persistentBools.TryGetValue(key, id, out var data))
-            {
-                return data.Value;
-            }
-            Debug.LogWarning(pinType + $" [key: {key} id: {id} ] not in scenedata");
-            return false;
+            ShouldActive();
         }
     }
 

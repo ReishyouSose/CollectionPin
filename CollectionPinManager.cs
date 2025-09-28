@@ -1,6 +1,5 @@
 ﻿using GlobalEnums;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -53,7 +52,7 @@ namespace CollectionPin
         {
             foreach (Transform trans in collectionTransform)
             {
-                trans.gameObject.GetComponent<CollectionLabel>().CheckActive();
+                trans.GetComponent<MapPinInfo>().CheckActive();
             }
         }
         public void HandleInput(bool placeMode, Transform pointer)
@@ -68,7 +67,7 @@ namespace CollectionPin
                     if (Vector2.Distance(v2, new Vector2(p.x, p.y)) > 0.3f)
                         continue;
                     GameObject obj = trans.gameObject;
-                    CollectionLabel label = obj.GetComponent<CollectionLabel>();
+                    MapPinInfo label = obj.GetComponent<MapPinInfo>();
                     foreach (var (_, info) in zonePins)
                     {
                         for (int i = 0; i < info.Pins.Count; i++)
@@ -146,10 +145,14 @@ namespace CollectionPin
                 }
                 int pinType = (int)type.Value;
                 int counter = Counter;
-                var local = AddPinToMap(key, null, pinType, counter, new Vector3(pos.x, pos.y, pinTemplate.transform.position.z), false);
+                var local = AddPinToMap(new MapPinInfo()
+                {
+                    MapUnlock = key,
+                    Index = counter,
+                }, new Vector3(pos.x, pos.y, pinTemplate.transform.position.z), false);
                 info.Pins.Add(new MapPinInfo()
                 {
-                    Type = pinType,
+                    PinType = pinType,
                     X = local.x,
                     Y = local.y,
                     Index = counter,
@@ -172,19 +175,19 @@ namespace CollectionPin
             {
                 foreach (var pin in zonePin.Pins)
                 {
-                    int counter = Counter;
-                    pin.Index = counter;
-
-                    AddPinToMap(mapUnlock, pin.CollectedFunc(), pin.Type, counter, new Vector3(pin.X, pin.Y, z), true);
+                    pin.Index = Counter;
+                    pin.MapUnlock = mapUnlock;
+                    AddPinToMap(pin, new Vector3(pin.X, pin.Y, z), true);
                 }
             }
         }
 
-        private Vector3 AddPinToMap(string mapUnlock, Func<PlayerData,SceneData, bool>? collected, int pinType, int counter, Vector3 pos, bool local)
+        private Vector3 AddPinToMap(MapPinInfo info, Vector3 pos, bool local)
         {
             GameObject newPin = UObj.Instantiate(pinTemplate, collectionTransform);
-            var label = newPin.AddComponent<CollectionLabel>();
-            label.SetInfo(mapUnlock, pinType, counter, collected);
+            var pin = newPin.AddComponent<MapPinInfo>();
+            pin.AnalysisData(info);
+            int pinType = pin.PinType;
             newPin.name = ((PinType)pinType).ToString();
             var sr = newPin.GetComponent<SpriteRenderer>();
             sr.sprite = sprites[pinType];
@@ -194,8 +197,23 @@ namespace CollectionPin
             else
                 transform.position = pos;
             newPin.SetActive(true);
-            //Debug.Log("Add collection pin at " + transform.localPosition);
+            Debug.Log($"{(PinType)pinType} at {transform.localPosition} Collected: {pin.Collected}");
             return transform.localPosition;
+        }
+        public void MatchCollectable(PersistentItemData<bool> data)
+        {
+            string key = data.SceneName;
+            string id = data.ID;
+            Debug.Log($"Try match key: {key} id: {id}");
+            foreach (Transform trans in collectionTransform)
+            {
+                var pin = trans.GetComponent<MapPinInfo>();
+                if (!pin.IsMatch(key, id))
+                    continue;
+                pin.Collected = true;
+                Debug.Log("Match success");
+                break;
+            }
         }
     }
 }
