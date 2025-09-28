@@ -65,7 +65,16 @@ namespace CollectionPin
                 //遗物有专门的数据
             };
             return new Func<PlayerData, SceneData, bool>((_, sd)
-                => sd.persistentBools.TryGetValue(key, id, out var data) && data.Value);
+                => SceneDataCheck(sd, (PinType)Type, key, id));
+        }
+        private static bool SceneDataCheck(SceneData sd, PinType pinType, string key, string id)
+        {
+            if (sd.persistentBools.TryGetValue(key, id, out var data))
+            {
+                return data.Value;
+            }
+            Debug.LogWarning(pinType + $" [key: {key} id: {id} ] not in scenedata");
+            return false;
         }
     }
 

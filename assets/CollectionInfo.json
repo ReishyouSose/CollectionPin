@@ -120,7 +120,7 @@
   {
     "Pins": [
       {
-        "GetBool": "",
+        "GetBool": "Bellway_City",
         "Type": 2,
         "X": -993.219055,
         "Y": 4.42079926
@@ -260,7 +260,7 @@
         "Y": 3.594306
       },
       {
-        "GetBool": "Shadow_27",
+        "GetBool": "Shadow_27|Sack Corpse Pickup",
         "Type": 2,
         "X": -980.4118,
         "Y": 4.262703
@@ -439,7 +439,7 @@
         "Y": 0.00479793549
       },
       {
-        "GetBool": "Coral_02",
+        "GetBool": "Coral_02|Collectable Item Pickup (1)",
         "Type": 2,
         "X": -1014.61389,
         "Y": -3.22649956

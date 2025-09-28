@@ -194,7 +194,7 @@ namespace CollectionPin
             else
                 transform.position = pos;
             newPin.SetActive(true);
-            Debug.Log("Add collection pin at " + transform.localPosition);
+            //Debug.Log("Add collection pin at " + transform.localPosition);
             return transform.localPosition;
         }
     }

@@ -25,7 +25,7 @@ namespace CollectionPin
                 return;
             }
             bool? collected = Collected?.Invoke(pd, SceneData.instance);
-            Debug.Log((PinType)PinType + " at " + transform.localPosition + " - " + (collected ?? false));
+            //Debug.Log((PinType)PinType + " at " + transform.localPosition + " - " + (collected ?? false));
             if (collected == true)
             {
                 gameObject.SetActive(false);
