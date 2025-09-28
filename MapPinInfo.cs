@@ -74,20 +74,15 @@ namespace CollectionPin
                 case DataValidType.SceneData:
                     var scene = SceneData.instance.persistentBools;
                     if (!scene.TryGetValue(Key, ID, out var data))
-                    {
-                        Debug.Log($"{Key} {ID} not in scene dict");
                         return true;
-                    }
                     if (!data.Value)
                         return true;
-                    Debug.Log($"{Key} {ID} collected");
                     Collected = true;
                     return false;
                 case DataValidType.PlayerData:
                     if (pd.GetBool(Key))
                     {
                         Collected = true;
-                        Debug.Log($"{Key} collected");
                         return false;
                     }
                     break;
@@ -95,7 +90,6 @@ namespace CollectionPin
                     if (pd.Relics.GetData(GetBool).IsCollected)
                     {
                         Collected = true;
-                        Debug.Log($"{GetBool} collected");
                         return false;
                     }
                     break;
