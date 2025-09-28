@@ -131,7 +131,7 @@
   {
     "Pins": [
       {
-        "GetBool": "Psalm Cylinder Librarian",
+        "GetBool": "Psalm Cylinder Library Roof",
         "Type": 11,
         "X": -989.8244,
         "Y": 7.12663841
@@ -143,7 +143,7 @@
         "Y": 5.792944
       },
       {
-        "GetBool": "Psalm Cylinder Library Roof",
+        "GetBool": "Psalm Cylinder Librarian",
         "Type": 11,
         "X": -988.891235,
         "Y": 6.49257469
@@ -478,12 +478,6 @@
   {
     "Pins": [
       {
-        "GetBool": "Seal Chit Ward Corpse",
-        "Type": 9,
-        "X": -1013.17749,
-        "Y": -8.801504
-      },
-      {
         "GetBool": "pd|mosstownAspidBerryCollected",
         "Type": 4,
         "X": -1009.69153,
@@ -524,6 +518,12 @@
         "Type": 4,
         "X": -1017.806,
         "Y": -11.02588
+      },
+      {
+        "GetBool": "Seal Chit Aspid_01",
+        "Type": 9,
+        "X": -1013.09247,
+        "Y": -8.629964
       }
     ],
     "MapUnlock": "HasMossGrottoMap"
