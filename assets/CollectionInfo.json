@@ -392,34 +392,34 @@
         "Y": -5.291089
       },
       {
-        "GetBool": "Shellwood_02",
+        "GetBool": "Shellwood_15",
         "Type": 5,
         "X": -1004.15363,
         "Y": -4.864583
       },
       {
-        "GetBool": "Shellwood_10",
+        "GetBool": "Shellwood_02",
+        "Type": 5,
+        "X": -1005.55627,
+        "Y": -5.50166368
+      },
+      {
+        "GetBool": "Shellwood_20",
         "Type": 5,
         "X": -1006.13678,
         "Y": -4.01440334
       },
       {
-        "GetBool": "Shellwood_15",
+        "GetBool": "Shellwood_26",
         "Type": 5,
         "X": -1006.57007,
         "Y": -2.51424885
       },
       {
-        "GetBool": "Shellwood_20",
+        "GetBool": "Shellwood_10",
         "Type": 5,
         "X": -1007.9054,
         "Y": -4.25176239
-      },
-      {
-        "GetBool": "Shellwood_26",
-        "Type": 5,
-        "X": -1005.55627,
-        "Y": -5.50166368
       },
       {
         "GetBool": "Shellwood_14",
