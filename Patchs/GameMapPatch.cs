@@ -34,5 +34,15 @@ namespace CollectionPin.Patchs
         {
             manager.CheckPinActive();
         }
+
+        [HarmonyPatch(nameof(GameMap.Update))]
+        [HarmonyPostfix]
+        private static void Update()
+        {
+            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.K))
+            {
+                
+            }
+        }
     }
 }
