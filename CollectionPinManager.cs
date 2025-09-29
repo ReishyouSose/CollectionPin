@@ -19,6 +19,7 @@ namespace CollectionPin
         private GameMap _gameMap = null!;
         private string assetPath = string.Empty;
         private int counter;
+        private CollectionPinData? copy;
         private int Counter => counter++;
 
         public void Create(GameMap gameMap)
@@ -52,7 +53,7 @@ namespace CollectionPin
         {
             foreach (Transform trans in collectionTransform)
             {
-                trans.GetComponent<MapPinInfo>().CheckActive();
+                trans.GetComponent<CollectionPinController>().CheckActive();
             }
         }
         public void HandleInput(bool placeMode, Transform pointer)
@@ -67,13 +68,13 @@ namespace CollectionPin
                     if (Vector2.Distance(v2, new Vector2(p.x, p.y)) > 0.3f)
                         continue;
                     GameObject obj = trans.gameObject;
-                    MapPinInfo label = obj.GetComponent<MapPinInfo>();
+                    var data = obj.GetComponent<CollectionPinController>();
                     foreach (var (_, info) in zonePins)
                     {
                         for (int i = 0; i < info.Pins.Count; i++)
                         {
                             var pin = info.Pins[i];
-                            if (pin.Index != label.Index)
+                            if (pin.Index != data.DataIndex)
                                 continue;
                             info.Pins.RemoveAt(i);
                             UObj.Destroy(trans.gameObject);
@@ -89,15 +90,16 @@ namespace CollectionPin
             if (!ctrl && !shift)
                 return;
 
-            if (Input.GetKeyDown(KeyCode.Alpha0))
+            if (ctrl)
             {
-                if (ctrl)
+                if (Input.GetKeyDown(KeyCode.S))
                 {
                     string json = JsonConvert.SerializeObject(zonePins.Values, Formatting.Indented);
                     File.WriteAllText(Path.Combine(assetPath, "CollectionInfo.json"), json);
-                    Debug.Log("Save collection, count " + zonePins.Count);
+                    Debug.Log("Save collection, count " + zonePins.Sum(x => x.Value.Pins.Count));
+                    return;
                 }
-                else if (shift)
+                else if (Input.GetKeyDown(KeyCode.R))
                 {
                     foreach (Transform obj in collectionTransform)
                     {
@@ -105,12 +107,27 @@ namespace CollectionPin
                     }
                     ReadJson();
                     Debug.Log("Reload collection");
+                    return;
                 }
-                return;
+                else if (Input.GetKeyDown(KeyCode.C))
+                {
+                    var pos = pointer.position;
+                    var v2 = new Vector2(pos.x, pos.y);
+                    foreach (Transform trans in collectionTransform)
+                    {
+                        var p = trans.position;
+                        if (Vector2.Distance(v2, new Vector2(p.x, p.y)) > 0.3f)
+                            continue;
+                        copy = GetData(trans.GetComponent<CollectionPinController>().DataIndex);
+                        Debug.Log("Copy " + copy?.ToString() ?? "Null");
+                    }
+                    return;
+                }
             }
 
             if (!placeMode)
                 return;
+
 
             PinType? type = null;
             int alpha = 49;
@@ -140,23 +157,19 @@ namespace CollectionPin
                     info = zonePins[key] = new ZonePinsInfo()
                     {
                         MapUnlock = key,
-                        Pins = new List<MapPinInfo>()
+                        Pins = new List<CollectionPinData>()
                     };
                 }
-                int pinType = (int)type.Value;
-                int counter = Counter;
-                var local = AddPinToMap(new MapPinInfo()
+                copy ??= new CollectionPinData()
                 {
-                    MapUnlock = key,
-                    Index = counter,
-                }, new Vector3(pos.x, pos.y, pinTemplate.transform.position.z), false);
-                info.Pins.Add(new MapPinInfo()
-                {
-                    PinType = pinType,
-                    X = local.x,
-                    Y = local.y,
-                    Index = counter,
-                });
+                    PinType = (int)type.Value,
+                    Index = Counter
+                };
+                var local = AddPinToMap(copy, key, new Vector3(pos.x, pos.y, pinTemplate.transform.position.z), false);
+                copy.X = local.x;
+                copy.Y = local.y;
+                info.Pins.Add(copy);
+                copy = null;
                 break;
             }
         }
@@ -176,18 +189,29 @@ namespace CollectionPin
                 foreach (var pin in zonePin.Pins)
                 {
                     pin.Index = Counter;
-                    pin.MapUnlock = mapUnlock;
-                    AddPinToMap(pin, new Vector3(pin.X, pin.Y, z), true);
+                    AddPinToMap(pin, mapUnlock, new Vector3(pin.X, pin.Y, z), true);
                 }
             }
         }
 
-        private Vector3 AddPinToMap(MapPinInfo info, Vector3 pos, bool local)
+        private CollectionPinData? GetData(int index)
+        {
+            foreach (var (map, info) in zonePins)
+            {
+                foreach (var pin in info.Pins)
+                {
+                    if (pin.Index == index)
+                        return pin;
+                }
+            }
+            return null;
+        }
+        private Vector3 AddPinToMap(CollectionPinData info, string mapUnlock, Vector3 pos, bool local)
         {
             GameObject newPin = UObj.Instantiate(pinTemplate, collectionTransform);
-            var pin = newPin.AddComponent<MapPinInfo>();
-            pin.AnalysisData(info);
-            int pinType = pin.PinType;
+            var pin = newPin.AddComponent<CollectionPinController>();
+            pin.Initialize(info, mapUnlock);
+            int pinType = (int)pin.Type;
             newPin.name = ((PinType)pinType).ToString();
             var sr = newPin.GetComponent<SpriteRenderer>();
             sr.sprite = sprites[pinType];
@@ -207,7 +231,7 @@ namespace CollectionPin
             Debug.Log($"Try match key: {key} id: {id}");
             foreach (Transform trans in collectionTransform)
             {
-                var pin = trans.GetComponent<MapPinInfo>();
+                var pin = trans.GetComponent<CollectionPinController>();
                 if (!pin.IsMatch(key, id))
                     continue;
                 pin.Collected = true;

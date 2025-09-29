@@ -21,7 +21,7 @@ namespace CollectionPin
         {
             if (IsTriggered)
                 return;
-            if (!other.name.Contains("Hero_Hornet"))
+            if (!other.GetComponent<HeroController>())
                 return;
             IsTriggered = true;
             CollectionPinManager.Ins.MatchCollectable(Data!);

@@ -13,6 +13,8 @@ namespace CollectionPin.Patchs
         [HarmonyPostfix]
         private static void Update(MapMarkerMenu __instance)
         {
+            if (!CollectionPin.DebugMode.Value)
+                return;
             CollectionPinManager.Ins.HandleInput(__instance.inPlacementMode, __instance.placementBox.transform);
         }
 
@@ -21,6 +23,8 @@ namespace CollectionPin.Patchs
         private static List<CodeInstruction> PanMap(IEnumerable<CodeInstruction> codes)
         {
             var list = codes.ToList();
+            if (!CollectionPin.DebugMode.Value)
+                return list;
             for (int i = 0; i < list.Count; i++)
             {
                 var code = list[i];
