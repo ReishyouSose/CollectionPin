@@ -5,7 +5,7 @@
         "Type": 2,
         "X": -1001.23071,
         "Y": -5.59011,
-        "Act3": true,
+        "Ability": 7,
         "GetBool": "Belltown"
       }
     ],
@@ -21,14 +21,14 @@
         "Type": 0,
         "X": -1014.50653,
         "Y": 8.831066,
-        "Act3": true,
+        "Ability": 7,
         "GetBool": "Peak_06"
       },
       {
         "Type": 0,
         "X": -1021.64319,
         "Y": 6.427639,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Peak_04c"
       }
     ],
@@ -40,28 +40,28 @@
         "Type": 0,
         "X": -1008.98212,
         "Y": 8.964811,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Slab_17"
       },
       {
         "Type": 2,
         "X": -1009.06311,
         "Y": 5.71455,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Slab_Cell_Quiet"
       },
       {
-        "Type": 8,
+        "Type": 5,
         "X": -1007.71283,
         "Y": 4.165616,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Weaver Totem Slab_Bottom"
       },
       {
         "Type": 1,
         "X": -1011.71332,
         "Y": 6.8164444,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Peak_01"
       }
     ],
@@ -70,24 +70,24 @@
   {
     "Pins": [
       {
-        "Type": 11,
+        "Type": 8,
         "X": -1000.04974,
         "Y": 9.786545,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Psalm Cylinder Hang"
       },
       {
         "Type": 1,
         "X": -1001.32239,
         "Y": 12.56049,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Hang_03_top"
       },
       {
-        "Type": 10,
+        "Type": 7,
         "X": -1002.43372,
         "Y": 8.719965,
-        "Act3": true,
+        "Ability": 7,
         "GetBool": "Weaver Record Conductor"
       }
     ],
@@ -99,21 +99,21 @@
         "Type": 1,
         "X": -995.9054,
         "Y": 9.002251,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Arborium_09"
       },
       {
         "Type": 2,
         "X": -994.660767,
         "Y": 9.664442,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Arborium_05"
       },
       {
-        "Type": 4,
+        "Type": 9,
         "X": -993.337952,
         "Y": 8.791954,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Arborium_04"
       }
     ],
@@ -125,14 +125,14 @@
         "Type": 0,
         "X": -999.554932,
         "Y": 7.28785324,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Song_09"
       },
       {
         "Type": 1,
         "X": -995.392639,
         "Y": 5.44261,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Cog_07"
       }
     ],
@@ -144,7 +144,7 @@
         "Type": 2,
         "X": -993.219055,
         "Y": 4.42079926,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Bellway_City"
       }
     ],
@@ -153,31 +153,31 @@
   {
     "Pins": [
       {
-        "Type": 11,
+        "Type": 8,
         "X": -989.8244,
         "Y": 7.12663841,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Psalm Cylinder Library Roof"
       },
       {
         "Type": 0,
         "X": -989.94165,
         "Y": 5.792944,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Library_05"
       },
       {
-        "Type": 11,
+        "Type": 8,
         "X": -988.891235,
         "Y": 6.49257469,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Psalm Cylinder Librarian"
       },
       {
         "Type": 2,
         "X": -988.508057,
         "Y": 6.49257469,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Library_08"
       }
     ],
@@ -186,45 +186,45 @@
   {
     "Pins": [
       {
-        "Type": 11,
+        "Type": 8,
         "X": -1001.5,
         "Y": 1.76,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Psalm Cylinder Ward"
       },
       {
         "Type": 2,
         "X": -1001.37018,
         "Y": 1.37966537,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Under_08"
       },
       {
         "Type": 1,
         "X": -998.7941,
         "Y": -0.060956955,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Under_10"
       },
       {
         "Type": 3,
         "X": -996.9781,
         "Y": -0.0276575089,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Under_19b"
       },
       {
         "Type": 1,
         "X": -993.82605,
         "Y": -0.244245529,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Library_11b"
       },
       {
-        "Type": 7,
+        "Type": 4,
         "X": -1004.68311,
         "Y": -0.101977348,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Bone Record Understore_Map_Room"
       }
     ],
@@ -236,49 +236,49 @@
         "Type": 3,
         "X": -998.013733,
         "Y": -1.05839348,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Wisp_05"
       },
       {
-        "Type": 7,
+        "Type": 4,
         "X": -995.3393,
         "Y": -0.8862572,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Bone Record Wisp Top"
       },
       {
         "Type": 1,
         "X": -985.925537,
         "Y": -3.21470737,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Greymoor_02"
       },
       {
-        "Type": 7,
+        "Type": 4,
         "X": -989.3446,
         "Y": -5.46934748,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Bone Record Greymoor_flooded_corridor"
       },
       {
         "Type": 2,
         "X": -992.9389,
         "Y": -4.87349272,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Halfway_01"
       },
       {
         "Type": 2,
         "X": -994.7344,
         "Y": -6.082841,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Greymoor_16"
       },
       {
         "Type": 0,
         "X": -992.390442,
         "Y": -1.88745832,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Wisp_07"
       }
     ],
@@ -290,21 +290,21 @@
         "Type": 2,
         "X": -989.49646,
         "Y": 1.79498291,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Shadow_20"
       },
       {
         "Type": 0,
         "X": -978.7924,
         "Y": 3.594306,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Shadow_13"
       },
       {
         "Type": 2,
         "X": -980.4118,
         "Y": 4.262703,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Shadow_27|Sack Corpse Pickup"
       }
     ],
@@ -316,7 +316,7 @@
         "Type": 3,
         "X": -974.245361,
         "Y": 7.475876,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Aqueduct_05"
       }
     ],
@@ -328,35 +328,35 @@
         "Type": 2,
         "X": -979.4664,
         "Y": -7.74179363,
-        "Act3": true,
+        "Ability": 7,
         "GetBool": "Bone_East_25"
       },
       {
         "Type": 0,
         "X": -985.289856,
         "Y": -11.613759,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Bone_East_20"
       },
       {
-        "Type": 7,
+        "Type": 4,
         "X": -982.3698,
         "Y": -12.448082,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Bone Record Bone_East_14"
       },
       {
         "Type": 0,
         "X": -979.8211,
         "Y": -12.3981314,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Bone_East_LavaChallenge|Heart Piece (1)"
       },
       {
-        "Type": 10,
+        "Type": 7,
         "X": -977.2162,
         "Y": -13.2119465,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Weaver Record Sprint_Challenge"
       }
     ],
@@ -368,7 +368,7 @@
         "Type": 2,
         "X": -989.6532,
         "Y": -9.231745,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Ant_20"
       }
     ],
@@ -380,35 +380,35 @@
         "Type": 1,
         "X": -988.280151,
         "Y": -12.9961357,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Dock_03c"
       },
       {
         "Type": 3,
         "X": -990.2646,
         "Y": -12.4797115,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Dock_03|Collectable Item Pickup"
       },
       {
         "Type": 1,
         "X": -996.070862,
         "Y": -13.0993528,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Bone_East_13"
       },
       {
         "Type": 2,
         "X": -996.208069,
         "Y": -15.4948645,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Dock_13"
       },
       {
         "Type": 0,
         "X": -998.8725,
         "Y": -11.0110474,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Dock_08"
       }
     ],
@@ -420,14 +420,14 @@
         "Type": 2,
         "X": -1005.58215,
         "Y": -7.941427,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Bone_18"
       },
       {
         "Type": 3,
         "X": -1003.384,
         "Y": -9.604156,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Bone_07"
       }
     ],
@@ -436,59 +436,59 @@
   {
     "Pins": [
       {
-        "Type": 8,
+        "Type": 5,
         "X": -1003.50726,
         "Y": -6.84345531,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Weaver Totem Witch"
       },
       {
-        "Type": 5,
+        "Type": 10,
         "X": -1003.8938,
         "Y": -5.291089,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Shellwood_01"
       },
       {
-        "Type": 5,
+        "Type": 10,
         "X": -1004.15363,
         "Y": -4.864583,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Shellwood_15"
       },
       {
-        "Type": 5,
+        "Type": 10,
         "X": -1005.55627,
         "Y": -5.50166368,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Shellwood_02"
       },
       {
-        "Type": 5,
+        "Type": 10,
         "X": -1006.13678,
         "Y": -4.01440334,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Shellwood_20"
       },
       {
-        "Type": 5,
+        "Type": 10,
         "X": -1006.57007,
         "Y": -2.51424885,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Shellwood_26"
       },
       {
-        "Type": 5,
+        "Type": 10,
         "X": -1007.9054,
         "Y": -4.25176239,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Shellwood_10"
       },
       {
         "Type": 0,
         "X": -1006.02075,
         "Y": -4.78803635,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Shellwood_14"
       }
     ],
@@ -500,21 +500,21 @@
         "Type": 3,
         "X": -1010.78326,
         "Y": 0.00479793549,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Coral_32"
       },
       {
         "Type": 2,
         "X": -1014.61389,
         "Y": -3.22649956,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Coral_02|Collectable Item Pickup (1)"
       },
       {
         "Type": 0,
         "X": -1018.18115,
         "Y": -2.748044,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Coral_19b"
       }
     ],
@@ -526,7 +526,7 @@
         "Type": 1,
         "X": -1007.1167,
         "Y": 2.17944431,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Song_19_entrance"
       }
     ],
@@ -538,7 +538,7 @@
         "Type": 2,
         "X": -1019.3324,
         "Y": 1.01537609,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Coral_23"
       }
     ],
@@ -547,59 +547,59 @@
   {
     "Pins": [
       {
-        "Type": 4,
+        "Type": 9,
         "X": -1009.69153,
         "Y": -8.904056,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "pd|mosstownAspidBerryCollected"
       },
       {
         "Type": 1,
         "X": -1011.07532,
         "Y": -10.0208235,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Bone_11b"
       },
       {
-        "Type": 8,
+        "Type": 5,
         "X": -1014.092,
         "Y": -10.3040085,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Weaver Totem Bonetown_upper_room"
       },
       {
-        "Type": 4,
+        "Type": 9,
         "X": -1011.85358,
         "Y": -10.4096479,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "pd|bonetownAspidBerryCollected"
       },
       {
-        "Type": 4,
+        "Type": 9,
         "X": -1012.62634,
         "Y": -11.96027,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Tut_01b"
       },
       {
-        "Type": 4,
+        "Type": 9,
         "X": -1014.328,
         "Y": -12.7441187,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Tut_02"
       },
       {
-        "Type": 4,
+        "Type": 9,
         "X": -1017.806,
         "Y": -11.02588,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "pd|bonegraveAspidBerryCollected"
       },
       {
-        "Type": 9,
+        "Type": 6,
         "X": -1013.09247,
         "Y": -8.629964,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Seal Chit Aspid_01"
       }
     ],
@@ -611,35 +611,35 @@
         "Type": 0,
         "X": -1016.6427,
         "Y": -9.624106,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Crawl_02"
       },
       {
-        "Type": 6,
+        "Type": 11,
         "X": -1017.18445,
         "Y": -9.965464,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Crawl_07"
       },
       {
         "Type": 2,
         "X": -1018.61774,
         "Y": -10.1987238,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Crawl_09"
       },
       {
-        "Type": 6,
+        "Type": 11,
         "X": -1019.85461,
         "Y": -9.859772,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Crawl_09"
       },
       {
-        "Type": 6,
+        "Type": 11,
         "X": -1017.93304,
         "Y": -8.554058,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Crawl_03"
       }
     ],
@@ -651,28 +651,28 @@
         "Type": 1,
         "X": -1011.74176,
         "Y": -13.21125,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Weave_11"
       },
       {
-        "Type": 4,
+        "Type": 9,
         "X": -1013.10724,
         "Y": -13.6707468,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Weave_03"
       },
       {
-        "Type": 10,
+        "Type": 7,
         "X": -1008.02637,
         "Y": -12.4065542,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Weaver Record Weave_08"
       },
       {
         "Type": 0,
         "X": -1006.5993,
         "Y": -12.8031969,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Weave_05b"
       }
     ],
@@ -681,17 +681,17 @@
   {
     "Pins": [
       {
-        "Type": 9,
+        "Type": 6,
         "X": -1001.24988,
         "Y": 3.50079823,
-        "Act3": false,
+        "Ability": 0,
         "GetBool": "Seal Chit Ward Corpse"
       },
       {
-        "Type": 9,
+        "Type": 6,
         "X": -996.0615,
         "Y": 3.99899387,
-        "Act3": true,
+        "Ability": 7,
         "GetBool": "Seal Chit Silk Siphon"
       }
     ],

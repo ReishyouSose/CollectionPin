@@ -12,22 +12,22 @@ namespace CollectionPin
             Relic
         }
 
-        public PinType Type { get; private set; }
-        public string GetBool { get; private set; } = string.Empty;
+        public PinType Pin { get; private set; }
+        public AbilityType Ability { get; private set; }
         public string MapUnlock { get; private set; } = string.Empty;
-        public int DataIndex { get; private set; }
-        public bool Act3 { get; private set; }
-        public bool Collected { get; set; }
+        public string GetBool { get; private set; } = string.Empty;
         public string Key { get; private set; } = string.Empty;
         public string ID { get; private set; } = string.Empty;
+        public int DataIndex { get; private set; }
+        public bool Collected { get; set; }
 
         private DataValidType validType;
 
         public void Initialize(CollectionPinData data, string mapUnlock)
         {
             // 直接提取数据字段
-            Type = (PinType)data.PinType;
-            Act3 = data.Act3;
+            Pin = (PinType)data.PinType;
+            Ability = (AbilityType)data.Ability;
             GetBool = data.GetBool;
             MapUnlock = mapUnlock;
             DataIndex = data.Index;
@@ -38,19 +38,44 @@ namespace CollectionPin
 
         public bool IsMatch(string key, string id) => key == Key && id == ID;
 
-        public void CheckActive() => gameObject.SetActive(ShouldActive());
+        public void CheckActive()
+        {
+            bool? active = ShouldActive();
+            if (active == null)
+            {
+                float opacity = CollectionPin.ModConfig.Opacity.Value;
+                if (opacity > 0)
+                {
+                    gameObject.SetActive(true);
+                    gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, opacity);
+                    return;
+                }
+                gameObject.SetActive(false);
+                return;
+            }
+            gameObject.SetActive(active.Value);
+        }
 
-        public bool ShouldActive()
+        public bool? ShouldActive()
         {
             if (Collected)
-                return false;
+                return null;
 
             PlayerData pd = PlayerData.instance;
 
-            if (Act3 && !pd.hasSuperJump)
+            if (Pin == PinType.Map)
+            {
+                if (!pd.GetBool(MapUnlock))
+                    return true;
+                Collected = true;
+                return null;
+            }
+
+            var config = CollectionPin.ModConfig;
+            if (config.MapLock.Value && !pd.GetBool(MapUnlock))
                 return false;
 
-            if (!pd.GetBool(MapUnlock))
+            if (config.AbilityLock.Value && Ability != AbilityType.None && !pd.GetBool(Ability.ToString()))
                 return false;
 
             switch (validType)
@@ -62,19 +87,19 @@ namespace CollectionPin
                     if (!data.Value)
                         return true;
                     Collected = true;
-                    return false;
+                    return null;
                 case DataValidType.PlayerData:
                     if (pd.GetBool(Key))
                     {
                         Collected = true;
-                        return false;
+                        return null;
                     }
                     break;
                 case DataValidType.Relic:
                     if (pd.Relics.GetData(GetBool).IsCollected)
                     {
                         Collected = true;
-                        return false;
+                        return null;
                     }
                     break;
             }
@@ -83,7 +108,7 @@ namespace CollectionPin
 
         private void AnalysisData()
         {
-            if (7 <= (int)Type && (int)Type <= 11)
+            if (4 <= (int)Pin && (int)Pin <= 8)
             {
                 validType = DataValidType.Relic;
                 return;
@@ -105,7 +130,7 @@ namespace CollectionPin
             validType = DataValidType.SceneData;
             string[] keyAndOverride = GetBool.Split('|');
             Key = keyAndOverride[0];
-            ID = keyAndOverride.Length == 2 ? keyAndOverride[1] : Type switch
+            ID = keyAndOverride.Length == 2 ? keyAndOverride[1] : Pin switch
             {
                 PinType.MaskShard => "Heart Piece",
                 PinType.SilkSpool => "Silk Spool",
@@ -119,7 +144,7 @@ namespace CollectionPin
         }
         public override string ToString()
         {
-            return $"{Type} {MapUnlock} {GetBool}";
+            return $"{Pin} {Ability} {MapUnlock} {GetBool}";
         }
     }
 }

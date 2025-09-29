@@ -35,14 +35,14 @@ namespace CollectionPin.Patchs
             manager.CheckPinActive();
         }
 
-        /*[HarmonyPatch(nameof(GameMap.Update))]
+        [HarmonyPatch(nameof(GameMap.Update))]
         [HarmonyPostfix]
         private static void Update()
         {
-            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.K))
+            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.P))
             {
-                Debug.Log("act3:" + PlayerData.instance.seenMapperAct3);
+                float dis = 0;
             }
-        }*/
+        }
     }
 }

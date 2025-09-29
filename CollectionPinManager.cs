@@ -40,11 +40,12 @@ namespace CollectionPin
             var bytes = File.ReadAllBytes(Path.Combine(assetPath, "Sprite.png"));
             Texture2D tex = new Texture2D(2, 2);
             tex.LoadImage(bytes);
-            sprites = new Sprite[12];
+            int col = 9, row = 3, total = col * row--;
+            sprites = new Sprite[total];
             Vector2 center = Vector2.one / 2f;
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < total; i++)
             {
-                sprites[i] = Sprite.Create(tex, new Rect((i % 6) * 160, (/*totalRow - 1*/1 - (i / 6)) * 160, 160, 160), center);
+                sprites[i] = Sprite.Create(tex, new Rect((i % col) * 160, (row - (i / col)) * 160, 160, 160), center);
             }
 
             ReadJson();
@@ -211,7 +212,7 @@ namespace CollectionPin
             GameObject newPin = UObj.Instantiate(pinTemplate, collectionTransform);
             var pin = newPin.AddComponent<CollectionPinController>();
             pin.Initialize(info, mapUnlock);
-            int pinType = (int)pin.Type;
+            int pinType = (int)pin.Pin;
             newPin.name = ((PinType)pinType).ToString();
             var sr = newPin.GetComponent<SpriteRenderer>();
             sr.sprite = sprites[pinType];
@@ -239,5 +240,22 @@ namespace CollectionPin
                 break;
             }
         }
+        public CollectionPinController GetClosetPin()
+        {
+            float dis = -1;
+            GameObject obj = null!;
+            Vector2 pos = V3toV2(_gameMap.compassIcon.transform.position);
+            foreach (Transform trans in collectionTransform)
+            {
+                float distance = Vector2.Distance(trans.position, pos);
+                if (dis < 0 || distance < dis)
+                {
+                    dis = distance;
+                    obj = trans.gameObject;
+                }
+            }
+            return obj.GetComponent<CollectionPinController>();
+        }
+        public static Vector2 V3toV2(Vector3 v) => new Vector2(v.x, v.y);
     }
 }
