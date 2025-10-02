@@ -19,12 +19,12 @@ namespace CollectionPin
         PollipHeart,//花芯
         PlasmifiedBlood,//蓝血
         CogHeart,//机心
-        SimpleKey,//简易钥匙
         PaleOil,//苍白油,
+        SimpleKey,//简易钥匙,
         RedTool = 18,
         BlueTool,
         YellowTool,
-        Skill,//法术
+        WhiteTool,//法术
         Ability,//能力
         SilkHeart,//丝之心
         Map,

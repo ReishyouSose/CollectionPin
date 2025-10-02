@@ -37,11 +37,14 @@ namespace CollectionPin.Patchs
 
         [HarmonyPatch(nameof(GameMap.Update))]
         [HarmonyPostfix]
-        private static void Update()
+        private static void Update(GameMap __instance)
         {
             if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.P))
             {
-                float dis = 0;
+                var data = PlayerData.instance.QuestCompletionData.GetData("Destroy Thread Cores");
+                Debug.Log($"cpl{data.IsCompleted} amt{data.CompletedCount} ever{data.WasEverCompleted}");
+                var pin = CollectionPinManager.Ins.GetClosetPin();
+                Debug.Log(pin.ToString());
             }
         }
     }

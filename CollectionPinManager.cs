@@ -78,6 +78,7 @@ namespace CollectionPin
                             if (pin.Index != data.DataIndex)
                                 continue;
                             info.Pins.RemoveAt(i);
+                            Debug.Log("Delete " + data);
                             UObj.Destroy(trans.gameObject);
                             return;
                         }
@@ -88,19 +89,20 @@ namespace CollectionPin
 
             bool ctrl = Input.GetKey(KeyCode.LeftControl);
             bool shift = Input.GetKey(KeyCode.LeftShift);
-            if (!ctrl && !shift)
+            bool alt = Input.GetKey(KeyCode.LeftAlt);
+            if (!ctrl && !shift && !alt)
                 return;
 
-            if (ctrl)
+            if (Input.GetKeyDown(KeyCode.Alpha0))
             {
-                if (Input.GetKeyDown(KeyCode.S))
+                if (shift)
                 {
                     string json = JsonConvert.SerializeObject(zonePins.Values, Formatting.Indented);
                     File.WriteAllText(Path.Combine(assetPath, "CollectionInfo.json"), json);
                     Debug.Log("Save collection, count " + zonePins.Sum(x => x.Value.Pins.Count));
                     return;
                 }
-                else if (Input.GetKeyDown(KeyCode.R))
+                if (alt)
                 {
                     foreach (Transform obj in collectionTransform)
                     {
@@ -110,7 +112,7 @@ namespace CollectionPin
                     Debug.Log("Reload collection");
                     return;
                 }
-                else if (Input.GetKeyDown(KeyCode.C))
+                if (ctrl)
                 {
                     var pos = pointer.position;
                     var v2 = new Vector2(pos.x, pos.y);
@@ -119,8 +121,10 @@ namespace CollectionPin
                         var p = trans.position;
                         if (Vector2.Distance(v2, new Vector2(p.x, p.y)) > 0.3f)
                             continue;
-                        copy = GetData(trans.GetComponent<CollectionPinController>().DataIndex);
-                        Debug.Log("Copy " + copy?.ToString() ?? "Null");
+                        var data = trans.GetComponent<CollectionPinController>();
+                        copy = GetData(data.DataIndex);
+                        if (copy != null)
+                            Debug.Log("Copy " + data);
                     }
                     return;
                 }
@@ -129,21 +133,26 @@ namespace CollectionPin
             if (!placeMode)
                 return;
 
-
             PinType? type = null;
             int alpha = 49;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 9; i++)
             {
                 int j = i + alpha;
                 if (Input.GetKeyDown((KeyCode)j))
                 {
-                    type = (PinType)(j - 49 + (shift ? 6 : 0));
+                    type = (PinType)(j - 49 + (alt ? 18 : shift ? 9 : 0));
                     break;
                 }
             }
 
             if (type == null)
                 return;
+
+            if (int.TryParse(type.ToString(), out alpha))
+            {
+                Debug.Log(alpha + "not in PinType");
+                return;
+            }
 
             MapZone mapZone = _gameMap.GetCurrentMapZone();
             var zoneInfo = _gameMap.mapZoneInfo[(int)mapZone];
@@ -166,7 +175,8 @@ namespace CollectionPin
                     PinType = (int)type.Value,
                     Index = Counter
                 };
-                var local = AddPinToMap(copy, key, new Vector3(pos.x, pos.y, pinTemplate.transform.position.z), false);
+                var local = AddPinToMap(copy, key,
+                    new Vector3(pos.x, pos.y, pinTemplate.transform.position.z), false, true);
                 copy.X = local.x;
                 copy.Y = local.y;
                 info.Pins.Add(copy);
@@ -207,7 +217,7 @@ namespace CollectionPin
             }
             return null;
         }
-        private Vector3 AddPinToMap(CollectionPinData info, string mapUnlock, Vector3 pos, bool local)
+        private Vector3 AddPinToMap(CollectionPinData info, string mapUnlock, Vector3 pos, bool local, bool log = false)
         {
             GameObject newPin = UObj.Instantiate(pinTemplate, collectionTransform);
             var pin = newPin.AddComponent<CollectionPinController>();
@@ -222,7 +232,8 @@ namespace CollectionPin
             else
                 transform.position = pos;
             newPin.SetActive(true);
-            Debug.Log($"{(PinType)pinType} at {transform.localPosition} Collected: {pin.Collected}");
+            if (log)
+                Debug.Log($"{pin} at {transform.localPosition}");
             return transform.localPosition;
         }
         public void MatchCollectable(PersistentItemData<bool> data)

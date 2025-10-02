@@ -12,6 +12,8 @@ namespace CollectionPin.Patchs
         {
             if (!__instance.TryGetComponent<PersistentBoolItem>(out var item))
                 return;
+            var data = item.itemData;
+            Debug.Log($"Pickup {data.SceneName} {data.ID}");
             CollectionPinManager.Ins.MatchCollectable(item.itemData);
         }
     }
