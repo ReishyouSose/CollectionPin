@@ -32,10 +32,11 @@ namespace CollectionPin
             assetPath = Path.Combine(location, "assets");
 
             var map = gameMap.fleaPinParents[0];
-            pinTemplate = map.GetChild(0).gameObject;//component Mappin SpriteRender
             var top = map.transform.parent;
             collectionTransform = new GameObject().transform;
             collectionTransform.SetParent(top);
+            collectionTransform.name = "CollectionPin";
+            pinTemplate = map.GetChild(0).gameObject;//component Mappin SpriteRender
 
             var bytes = File.ReadAllBytes(Path.Combine(assetPath, "Sprite.png"));
             Texture2D tex = new Texture2D(2, 2);
@@ -220,6 +221,7 @@ namespace CollectionPin
         private Vector3 AddPinToMap(CollectionPinData info, string mapUnlock, Vector3 pos, bool local, bool log = false)
         {
             GameObject newPin = UObj.Instantiate(pinTemplate, collectionTransform);
+            UObj.DestroyImmediate(newPin.GetComponent<MapPin>());
             var pin = newPin.AddComponent<CollectionPinController>();
             pin.Initialize(info, mapUnlock);
             int pinType = (int)pin.Pin;

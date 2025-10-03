@@ -662,27 +662,6 @@
         "Y": 12.4236336,
         "Ability": 5,
         "GetBool": "WebShot Weaver|WebShot Forge|WebShot Architect"
-      },
-      {
-        "Type": 0,
-        "X": -976.313,
-        "Y": -8.854442,
-        "Ability": 0,
-        "GetBool": "飞毛腿任务"
-      },
-      {
-        "Type": 19,
-        "X": -1009.56262,
-        "Y": -8.464459,
-        "Ability": 0,
-        "GetBool": "Mosscreep Tool 1"
-      },
-      {
-        "Type": 19,
-        "X": -1009.146,
-        "Y": -8.61447048,
-        "Ability": 6,
-        "GetBool": "Mosscreep Tool 2"
       }
     ],
     "MapUnlock": "HasAqueductMap"
@@ -1197,6 +1176,20 @@
         "Y": -11.9934006,
         "Ability": 0,
         "GetBool": "cr|Spell"
+      },
+      {
+        "Type": 19,
+        "X": -1009.36206,
+        "Y": -8.606008,
+        "Ability": 6,
+        "GetBool": "Mosscreep Tool 1"
+      },
+      {
+        "Type": 19,
+        "X": -1009.36206,
+        "Y": -8.606008,
+        "Ability": 6,
+        "GetBool": "Mosscreep Tool 2"
       }
     ],
     "MapUnlock": "HasMossGrottoMap"

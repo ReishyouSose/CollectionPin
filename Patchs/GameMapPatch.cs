@@ -39,6 +39,8 @@ namespace CollectionPin.Patchs
         [HarmonyPostfix]
         private static void Update(GameMap __instance)
         {
+            if (!CollectionPin.ModConfig.DebugMode.Value)
+                return;
             if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.P))
             {
                 var data = PlayerData.instance.QuestCompletionData.GetData("Destroy Thread Cores");

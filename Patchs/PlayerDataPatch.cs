@@ -10,6 +10,8 @@ namespace CollectionPin.Patchs
         [HarmonyPrefix]
         private static void SetToolData(PlayerData __instance, string toolName, ToolItemsData.Data data)
         {
+            if (!CollectionPin.ModConfig.DebugMode.Value)
+                return;
             if (__instance.Tools.GetData(toolName).IsUnlocked)
                 return;
             Debug.Log("Unlock tool: " + toolName);

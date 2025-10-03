@@ -184,13 +184,21 @@ namespace CollectionPin
         {
             return GetBool switch
             {
+                //白愈厅钥匙，商人没拿走钥匙时显示
                 "pd|collectedWardKey" => new Func<CollectionPinController, PlayerData, bool>((pin, pd)
-                                        => !pd.GetBool("MerchantEnclaveWardKey")),//商人没拿走钥匙时显示
+                    => !pd.GetBool("MerchantEnclaveWardKey")),
+
+                //弧爪，蚂蚁商人死了显示 SeenAntMerchantDead这是另一个pd
                 "Curve Claws" => new Func<CollectionPinController, PlayerData, bool>((pin, pd)
-                                        => pd.GetBool("antMerchantKilled")),//蚂蚁商人死了显示
-                                                                            //SeenAntMerchantDead这是另一个pd，需要测试
+                    => pd.GetBool("antMerchantKilled")),
+
+                //骸底镇上空苔莓，第三幕会进右边房间
                 "pd|bonetownAspidBerryCollected" => Ability == AbilityType.hasDash ? act3 : notAct3,
+
+                //磁石骰，第三幕会被小偷拿走
                 "Magnetite Dice" => notAct3,
+
+                //爆裂燧甲虫奖励，第三幕在原跳蚤位置捡
                 "Bone_10|Collectable Item Pickup Locket" => new Func<CollectionPinController, PlayerData, bool>((pin, pd) =>
                 {
                     if (pd.QuestCompletionData.GetData("Rock Rollers").IsCompleted)
@@ -199,6 +207,11 @@ namespace CollectionPin
                         return false;
                     return true;
                 }),
+
+                //德鲁伊双瞳，拿了单瞳后再显示
+                "Mosscreep Tool 2" => new Func<CollectionPinController, PlayerData, bool>((_, pd)
+                    => pd.Tools.GetData("Mosscreep Tool 1").IsUnlocked),
+
                 _ => null,
             };
         }
