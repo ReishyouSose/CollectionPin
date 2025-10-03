@@ -8,7 +8,7 @@ namespace CollectionPin
     {
         internal static ModConfig ModConfig = null!;
         public const string Guid = "Reits.CollectionPin";
-        public const string Version = "1.0.1.1";
+        public const string Version = "1.0.1.2";
         public void Awake()
         {
             ModConfig = new ModConfig(Config);
