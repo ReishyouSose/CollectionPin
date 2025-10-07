@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using CollectionPin.Scripts.MonoBehaviours;
+using HarmonyLib;
 using UnityEngine;
 
 namespace CollectionPin.Patchs

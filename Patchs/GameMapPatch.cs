@@ -1,4 +1,6 @@
-﻿using HarmonyLib;
+﻿using CollectionPin.Scripts;
+using GlobalEnums;
+using HarmonyLib;
 using UnityEngine;
 
 namespace CollectionPin.Patchs
@@ -21,32 +23,33 @@ namespace CollectionPin.Patchs
 
         [HarmonyPatch(nameof(GameMap.TryOpenQuickMap))]
         [HarmonyPostfix]
-        private static void TryOpenQuickMap(bool __result)
+        private static void TryOpenQuickMap(GameMap __instance,  bool __result)
         {
-            if (!__result)
-                return;
-            manager.CheckPinActive();
+            if (__result)
+            {
+                var zone = __instance.GetCurrentMapZone();
+                Debug.Log((zone, manager.zoneToMap[zone]));
+                manager.CheckPinActive(zone);
+            }
         }
 
         [HarmonyPatch(nameof(GameMap.WorldMap))]
         [HarmonyPostfix]
         private static void WorldMap()
         {
-            manager.CheckPinActive();
+            manager.CheckPinActive(MapZone.NONE);
         }
 
         [HarmonyPatch(nameof(GameMap.Update))]
         [HarmonyPostfix]
         private static void Update(GameMap __instance)
         {
-            if (!CollectionPin.ModConfig.DebugMode.Value)
+            if (!ModConfig.Ins.DebugMode.Value)
                 return;
             if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.P))
             {
                 var data = PlayerData.instance.QuestCompletionData.GetData("Destroy Thread Cores");
                 Debug.Log($"cpl{data.IsCompleted} amt{data.CompletedCount} ever{data.WasEverCompleted}");
-                var pin = CollectionPinManager.Ins.GetClosetPin();
-                Debug.Log(pin.ToString());
             }
         }
     }

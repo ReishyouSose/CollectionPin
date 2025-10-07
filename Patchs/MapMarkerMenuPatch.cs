@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using CollectionPin.Scripts;
+using HarmonyLib;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -13,17 +14,17 @@ namespace CollectionPin.Patchs
         [HarmonyPostfix]
         private static void Update(MapMarkerMenu __instance)
         {
-            if (!CollectionPin.ModConfig.DebugMode.Value)
+            if (!ModConfig.Ins.DebugMode.Value)
                 return;
             CollectionPinManager.Ins.HandleInput(__instance.inPlacementMode, __instance.placementBox.transform);
         }
 
         [HarmonyPatch(nameof(MapMarkerMenu.PanMap))]
         [HarmonyTranspiler]
-        private static List<CodeInstruction> PanMap(IEnumerable<CodeInstruction> codes)
+        private static List<CodeInstruction> PanMap_IL(IEnumerable<CodeInstruction> codes)
         {
             var list = codes.ToList();
-            if (!CollectionPin.ModConfig.DebugMode.Value)
+            if (!ModConfig.Ins.DebugMode.Value)
                 return list;
             for (int i = 0; i < list.Count; i++)
             {
@@ -37,6 +38,15 @@ namespace CollectionPin.Patchs
                 break;
             }
             return list;
+        }
+
+        [HarmonyPatch(nameof(MapMarkerMenu.PanMap))]
+        [HarmonyPostfix]
+        private static void PanMap_PostFix(MapMarkerMenu __instance, bool __result)
+        {
+            if (!__result)
+                return;
+            CollectionPinManager.Ins.CollideContainerPin(__instance.placementBox.transform.position);
         }
         private static float LowSpeed(float value)
         {

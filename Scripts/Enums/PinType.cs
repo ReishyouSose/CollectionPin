@@ -1,0 +1,33 @@
+﻿namespace CollectionPin.Scripts.Enums
+{
+    public enum PinType
+    {
+        MaskShard,
+        SilkSpool,
+        MemoryLocket,
+        CraftMetal,
+        BoneScroll,//骨卷轴
+        WeaverEffigy,//编织者雕像
+        ChoralCommandment,//圣咏戒律
+        RuneHarp,//符文竖琴
+        Cylinder,//音筒
+        MossBerry,//苔梅
+        PollipHeart,//花芯
+        PlasmifiedBlood,//蓝血
+        CogHeart,//机心
+        PaleOil,//苍白油,
+        SimpleKey,//简易钥匙,
+        ToolKit,//制作匣
+        ToolBag,//容量袋
+        ContainerPin,
+        RedTool,
+        BlueTool,
+        YellowTool,
+        WhiteTool,//法术
+        Ability,//能力
+        SilkHeart,//丝之心
+        Map,
+        Inv,
+        Container,
+    }
+}
