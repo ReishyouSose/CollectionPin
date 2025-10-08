@@ -1,5 +1,4 @@
 ﻿using CollectionPin.Scripts.DataStruct;
-using CollectionPin.Scripts.Enums;
 using System;
 using UnityEngine;
 
@@ -9,12 +8,15 @@ namespace CollectionPin.Scripts.MonoBehaviours
     {
         public ContainerPinsList Info { get; private set; } = null!;
         public GameObject Container { get; private set; } = null!;
+        private bool needRefresh;
+        private int activeCount;
+
         public bool IsShowing
         {
             get => Container.gameObject.activeSelf;
             set => Container.gameObject.SetActive(value);
         }
-        public void SetContainer(ContainerPinsList info, GameObject container, SpriteRenderer sr)
+        public void SetContainer(ContainerPinsList info, GameObject container)
         {
             if (Container != null)
                 Destroy(Container);
@@ -22,12 +24,44 @@ namespace CollectionPin.Scripts.MonoBehaviours
             Container.name = "Quest_" + info.Name;
             Container.SetActive(false);
             Info = info;
-            int x = -1, y = 0;
-            int amount = CalculateItemsPerRow(info.Pins.Count);
             bool act3 = PlayerData.instance.act3_wokeUp;
             foreach (var pin in Info.Pins)
             {
                 if (pin.Act3 && !act3)
+                    continue;
+                AddPinToContainer(pin);
+            }
+        }
+        public bool IsAllCollected()
+        {
+            activeCount = 0;
+            foreach (Transform trans in Container.transform)
+            {
+                var pin = trans.GetComponent<ContainerPinController>();
+                pin.CheckActive(string.Empty);
+                if (pin.gameObject.activeSelf)
+                {
+                    activeCount++;
+                }
+            }
+            needRefresh = true;
+            return activeCount == 0;
+        }
+        public void ShowContainer()
+        {
+            if (IsShowing)
+                return;
+            Container.transform.localScale = Vector3.one;
+            IsShowing = true;
+            if (!needRefresh)
+                return;
+            needRefresh = false;
+            int x = -1, y = 0;
+            float spacing = 0.8f;
+            int amount = CalculateItemsPerRow(activeCount);
+            foreach (Transform trans in Container.transform)
+            {
+                if (!trans.gameObject.activeSelf)
                     continue;
                 x++;
                 if (x >= amount)
@@ -35,36 +69,13 @@ namespace CollectionPin.Scripts.MonoBehaviours
                     x = 0;
                     y++;
                 }
-                Vector3 pos = new Vector3(x * 0.75f + 0.5f, -y * 0.75f - 0.5f, -0.1f);
-                AddPinToContainer(pin, pos);
+                trans.localPosition = new Vector3((x + 0.5f) * spacing, (-y - 0.5f) * spacing, -0.1f);
             }
-            sr.drawMode = SpriteDrawMode.Sliced;
-            var size = sr.size = new Vector2((amount - 1) * 0.75f + 1f, y * 0.75f + 1f);
+            var sr = Container.GetComponent<SpriteRenderer>();
+            var size = sr.size = new Vector2(amount * spacing, (y + 1) * spacing);
             var p = sr.transform.localPosition;
-            float xOffset = info.Right ? 0.5f : (-size.x - 0.5f);
+            float xOffset = Info.Right ? 0.5f : (-size.x - 0.5f);
             sr.transform.localPosition = new Vector3(p.x + xOffset, p.y + size.y / 2f, p.z);
-        }
-        public bool IsAllCollected()
-        {
-            foreach (Transform trans in Container.transform)
-            {
-                var pin = trans.GetComponent<ContainerPinController>();
-                if (pin.Pin != PinType.Inv && !pin.IsCollected())
-                    return false;
-            }
-            return true;
-        }
-        public void ShowContainer()
-        {
-            if (IsShowing)
-                return;
-            IsShowing = true;
-            Container.transform.localScale = Vector3.one;
-            foreach (Transform trans in Container.transform)
-            {
-                var pin = trans.GetComponent<ContainerPinController>();
-                pin.CheckActive(string.Empty);
-            }
         }
         public void HideContainer()
         {
@@ -72,7 +83,7 @@ namespace CollectionPin.Scripts.MonoBehaviours
                 return;
             IsShowing = false;
         }
-        private void AddPinToContainer(ContainerPinData info, Vector3 pos)
+        private void AddPinToContainer(ContainerPinData info)
         {
             CollectionPinManager manager = CollectionPinManager.Ins;
             var pinTemplate = manager.pinTemplate;
@@ -87,27 +98,6 @@ namespace CollectionPin.Scripts.MonoBehaviours
 
             var sr = newPin.GetComponent<SpriteRenderer>();
             sr.sprite = sprites[pinType];
-
-            var trans = newPin.GetComponent<Transform>();
-            trans.localPosition = pos;
-
-            GameObject marker = Instantiate(pinTemplate, Container.transform);
-            marker.SetActive(false);
-            DestroyImmediate(marker.GetComponent<MapPin>());
-
-            var markerPin = marker.AddComponent<ContainerPinController>();
-            markerPin.Initialize(new ContainerPinData()
-            {
-                PinType = (int)PinType.Inv,
-            });
-            marker.name = "marker";
-            var markerSR = marker.GetComponent<SpriteRenderer>();
-            markerSR.sprite = sprites[^2];
-
-            var markerTrans = marker.GetComponent<Transform>();
-            markerTrans.localPosition = pos;
-
-            pin.CollectedMarker = marker;
         }
         public void OnDestroy()
         {

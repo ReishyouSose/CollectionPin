@@ -14,28 +14,30 @@ namespace CollectionPin.Scripts.MonoBehaviours
             Pin = (PinType)data.PinType;
             Act3 = data.Act3;
             GetBool = data.GetBool;
+            ExtraCondition = AnalysisExtra(data.Extra);
             AnalysisData();
         }
 
         public override void CheckActive(string _)
         {
-            if (Pin == PinType.Inv)
-                return;
-            gameObject.SetActive(true);
-            CollectedMarker.SetActive(IsCollected());
+            gameObject.SetActive(ShouldActive());
         }
 
-        public bool IsCollected()
+        public bool ShouldActive()
         {
             if (Collected)
-                return true;
+                return false;
 
-            if (CollectedCheck())
+            var pd = PlayerData.instance;
+            if (ExtraCondition?.Invoke(pd) == false)
+                return false;
+
+            if (CollectedCheck(pd))
             {
                 Collected = true;
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
         public override string ToString()
         {

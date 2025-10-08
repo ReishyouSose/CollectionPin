@@ -6,31 +6,35 @@
         "X": -1001.23071,
         "Y": -5.59011,
         "Ability": 7,
-        "GetBool": "Belltown"
+        "GetBool": "Belltown",
+        "Extra": null
       },
       {
         "Type": 22,
         "X": -1001.21405,
         "Y": -5.23923159,
         "Ability": 3,
-        "GetBool": "pdb|hasNeedolin"
+        "GetBool": "pdb|hasNeedolin",
+        "Extra": null
       },
       {
-        "Type": 17,
+        "Type": 16,
         "X": -1000.75604,
         "Y": -6.044599,
         "Ability": 0,
-        "GetBool": "Bellhart_Shop"
+        "GetBool": "Bellhart_Shop",
+        "Extra": null
       },
       {
-        "Type": 17,
+        "Type": 16,
         "X": -1001.27631,
         "Y": -6.50351667,
         "Ability": 0,
-        "GetBool": "Bellhart_Quest|visitedBellhartSaved"
+        "GetBool": "Bellhart_Quest|visitedBellhartSaved",
+        "Extra": null
       },
       {
-        "Type": 14,
+        "Type": 51,
         "X": -1001.18066,
         "Y": -7.61852837,
         "Ability": 0,
@@ -43,42 +47,47 @@
   {
     "Pins": [
       {
-        "Type": 24,
+        "Type": 7,
         "X": -990.2047,
         "Y": -2.14790726,
         "Ability": 0,
-        "GetBool": "pdb|visitedDustpens"
+        "GetBool": "pdb|visitedDustpens",
+        "Extra": null
       },
       {
         "Type": 18,
         "X": -987.414063,
         "Y": -1.64305258,
         "Ability": 0,
-        "GetBool": "Tack"
+        "GetBool": "Tack",
+        "Extra": null
       },
       {
         "Type": 20,
         "X": -986.7174,
         "Y": -3.81985426,
         "Ability": 0,
-        "GetBool": "Barbed Wire"
+        "GetBool": "Barbed Wire",
+        "Extra": null
       },
       {
-        "Type": 14,
+        "Type": 36,
         "X": -985.6235,
         "Y": 0.08664513,
         "Ability": 0,
-        "GetBool": "pdb|CollectedDustCageKey"
+        "GetBool": "pdb|CollectedDustCageKey",
+        "Extra": null
       },
       {
-        "Type": 14,
+        "Type": 47,
         "X": -986.289063,
         "Y": -2.11572361,
         "Ability": 6,
-        "GetBool": "pdb|gotPickledRoachEgg"
+        "GetBool": "pdb|gotPickledRoachEgg",
+        "Extra": null
       },
       {
-        "Type": 14,
+        "Type": 15,
         "X": -987.135742,
         "Y": -1.66422367,
         "Ability": 0,
@@ -95,35 +104,40 @@
         "X": -1014.50653,
         "Y": 8.831066,
         "Ability": 7,
-        "GetBool": "Peak_06"
+        "GetBool": "Peak_06",
+        "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 7,
         "X": -1013.9173,
         "Y": 4.94728374,
         "Ability": 0,
-        "GetBool": "pdb|visitedMountain"
+        "GetBool": "pdb|visitedMountain",
+        "Extra": null
       },
       {
         "Type": 0,
         "X": -1021.64807,
         "Y": 6.596855,
         "Ability": 6,
-        "GetBool": "Peak_04c"
+        "GetBool": "Peak_04c",
+        "Extra": null
       },
       {
         "Type": 19,
         "X": -1018.90985,
         "Y": 5.796547,
         "Ability": 0,
-        "GetBool": "Revenge Crystal"
+        "GetBool": "Revenge Crystal",
+        "Extra": null
       },
       {
         "Type": 22,
         "X": -1012.41656,
         "Y": 13.15568,
         "Ability": 5,
-        "GetBool": "pdb|hasDoubleJump"
+        "GetBool": "pdb|hasDoubleJump",
+        "Extra": null
       },
       {
         "Type": 19,
@@ -132,6 +146,14 @@
         "Ability": 0,
         "GetBool": "Pinstress Tool",
         "Extra": "qst|Pinstress Battle|0"
+      },
+      {
+        "Type": 25,
+        "X": -1012.30127,
+        "Y": 12.4236336,
+        "Ability": 5,
+        "GetBool": "WebShot Weaver|WebShot Forge|WebShot Architect",
+        "Extra": "inv|Broken SilkShot|1"
       }
     ],
     "MapUnlock": "HasPeakMap"
@@ -143,56 +165,64 @@
         "X": -1009.06311,
         "Y": 5.71455,
         "Ability": 0,
-        "GetBool": "Slab_Cell_Quiet"
+        "GetBool": "Slab_Cell_Quiet",
+        "Extra": null
       },
       {
-        "Type": 5,
+        "Type": 28,
         "X": -1007.71283,
         "Y": 4.165616,
         "Ability": 0,
-        "GetBool": "Weaver Totem Slab_Bottom"
+        "GetBool": "Weaver Totem Slab_Bottom",
+        "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 7,
         "X": -1007.97284,
         "Y": 7.223133,
         "Ability": 0,
-        "GetBool": "pdb|visitedSlab"
+        "GetBool": "pdb|visitedSlab",
+        "Extra": null
       },
       {
-        "Type": 14,
+        "Type": 37,
         "X": -1011.39844,
         "Y": 7.11149025,
         "Ability": 0,
-        "GetBool": "pdb|HasSlabKeyA"
+        "GetBool": "pdb|HasSlabKeyA",
+        "Extra": null
       },
       {
-        "Type": 14,
+        "Type": 38,
         "X": -1011.14789,
         "Y": 8.319229,
         "Ability": 0,
-        "GetBool": "pdb|HasSlabKeyB"
+        "GetBool": "pdb|HasSlabKeyB",
+        "Extra": null
       },
       {
         "Type": 0,
         "X": -1009.10706,
         "Y": 9.127689,
         "Ability": 0,
-        "GetBool": "Slab_17"
+        "GetBool": "Slab_17",
+        "Extra": null
       },
       {
         "Type": 1,
         "X": -1011.81775,
         "Y": 6.92359734,
         "Ability": 0,
-        "GetBool": "Peak_01"
+        "GetBool": "Peak_01",
+        "Extra": null
       },
       {
         "Type": 21,
         "X": -1008.36438,
         "Y": 4.55861568,
         "Ability": 0,
-        "GetBool": "pdb|hasSilkBomb"
+        "GetBool": "pdb|hasSilkBomb",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasSlabMap"
@@ -200,46 +230,52 @@
   {
     "Pins": [
       {
-        "Type": 7,
+        "Type": 30,
         "X": -1002.43372,
         "Y": 8.719965,
         "Ability": 7,
-        "GetBool": "Weaver Record Conductor"
+        "GetBool": "Weaver Record Conductor",
+        "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 7,
         "X": -998.2274,
         "Y": 8.622482,
         "Ability": 0,
-        "GetBool": "pdb|visitedHang"
+        "GetBool": "pdb|visitedHang",
+        "Extra": null
       },
       {
         "Type": 1,
         "X": -1001.3255,
         "Y": 12.6001511,
         "Ability": 6,
-        "GetBool": "Hang_03_top"
+        "GetBool": "Hang_03_top",
+        "Extra": null
       },
       {
         "Type": 18,
         "X": -1000.27887,
         "Y": 10.4671936,
         "Ability": 0,
-        "GetBool": "Cogwork Flier"
+        "GetBool": "Cogwork Flier",
+        "Extra": null
       },
       {
-        "Type": 8,
+        "Type": 31,
         "X": -999.849,
         "Y": 9.633278,
         "Ability": 0,
-        "GetBool": "Psalm Cylinder Hang"
+        "GetBool": "Psalm Cylinder Hang",
+        "Extra": null
       },
       {
         "Type": 18,
         "X": -1000.18347,
         "Y": 8.796474,
         "Ability": 0,
-        "GetBool": "Rosary Cannon"
+        "GetBool": "Rosary Cannon",
+        "Extra": null
       },
       {
         "Type": 19,
@@ -255,53 +291,60 @@
   {
     "Pins": [
       {
-        "Type": 24,
+        "Type": 7,
         "X": -991.946655,
         "Y": 8.849781,
         "Ability": 0,
-        "GetBool": "pdb|visitedArborium"
+        "GetBool": "pdb|visitedArborium",
+        "Extra": null
       },
       {
         "Type": 12,
         "X": -991.9118,
         "Y": 9.216408,
         "Ability": 0,
-        "GetBool": "Arborium_10"
+        "GetBool": "Arborium_10",
+        "Extra": null
       },
       {
         "Type": 9,
         "X": -993.5983,
         "Y": 8.833298,
         "Ability": 0,
-        "GetBool": "Arborium_04"
+        "GetBool": "Arborium_04",
+        "Extra": null
       },
       {
         "Type": 2,
         "X": -994.7167,
         "Y": 9.68666649,
         "Ability": 0,
-        "GetBool": "Arborium_05"
+        "GetBool": "Arborium_05",
+        "Extra": null
       },
       {
         "Type": 1,
         "X": -996.0968,
         "Y": 9.033546,
         "Ability": 0,
-        "GetBool": "Arborium_09"
+        "GetBool": "Arborium_09",
+        "Extra": null
       },
       {
-        "Type": 14,
+        "Type": 43,
         "X": -993.1799,
         "Y": 10.6691551,
         "Ability": 0,
-        "GetBool": "Arborium_07|Collectable Item Pickup Materium"
+        "GetBool": "Arborium_07|Collectable Item Pickup Materium",
+        "Extra": null
       },
       {
         "Type": 18,
         "X": -992.3837,
         "Y": 10.6330185,
         "Ability": 0,
-        "GetBool": "Lightning Rod"
+        "GetBool": "Lightning Rod",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasArboriumMap"
@@ -309,32 +352,28 @@
   {
     "Pins": [
       {
-        "Type": 24,
+        "Type": 7,
         "X": -997.7154,
         "Y": 7.827812,
         "Ability": 0,
-        "GetBool": "pdb|visitedCogwork"
+        "GetBool": "pdb|visitedCogwork",
+        "Extra": null
       },
       {
         "Type": 1,
         "X": -995.3081,
         "Y": 5.45798874,
         "Ability": 0,
-        "GetBool": "Cog_07"
+        "GetBool": "Cog_07",
+        "Extra": null
       },
       {
         "Type": 12,
         "X": -997.9775,
         "Y": 7.62651253,
         "Ability": 6,
-        "GetBool": "pdb|wokeSongChevalier"
-      },
-      {
-        "Type": 14,
-        "X": -997.627136,
-        "Y": 8.182501,
-        "Ability": 7,
-        "GetBool": "pdi|GreenPrinceLocation|3"
+        "GetBool": "pdb|wokeSongChevalier",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasCogMap"
@@ -346,10 +385,11 @@
         "X": -993.219055,
         "Y": 4.42079926,
         "Ability": 0,
-        "GetBool": "Bellway_City"
+        "GetBool": "Bellway_City",
+        "Extra": null
       },
       {
-        "Type": 14,
+        "Type": 40,
         "X": -990.782043,
         "Y": 7.917385,
         "Ability": 0,
@@ -357,60 +397,68 @@
         "Extra": "pdb|visitedEnclave|false"
       },
       {
-        "Type": 24,
+        "Type": 7,
         "X": -992.730164,
         "Y": 4.14263439,
         "Ability": 0,
-        "GetBool": "pdb|visitedHalls"
+        "GetBool": "pdb|visitedHalls",
+        "Extra": null
       },
       {
-        "Type": 13,
+        "Type": 6,
         "X": -994.2641,
         "Y": 6.557564,
         "Ability": 0,
-        "GetBool": "Library_03"
+        "GetBool": "Library_03",
+        "Extra": null
       },
       {
         "Type": 0,
         "X": -999.730164,
         "Y": 7.389557,
         "Ability": 0,
-        "GetBool": "Song_09"
+        "GetBool": "Song_09",
+        "Extra": null
       },
       {
         "Type": 12,
         "X": -1003.72119,
         "Y": 7.01561356,
         "Ability": 0,
-        "GetBool": "Song_26"
+        "GetBool": "Song_26",
+        "Extra": null
       },
       {
-        "Type": 13,
+        "Type": 6,
         "X": -998.6541,
         "Y": 6.546852,
         "Ability": 0,
-        "GetBool": "pdb|GotGourmandReward"
+        "GetBool": "pdb|GotGourmandReward",
+        "Extra": null
       },
       {
-        "Type": 17,
+        "Type": 16,
         "X": -990.8502,
         "Y": 8.170021,
         "Ability": 0,
-        "GetBool": "Enclave_Shop"
+        "GetBool": "Enclave_Shop",
+        "Extra": null
       },
       {
-        "Type": 17,
+        "Type": 16,
         "X": -1016.2489,
         "Y": 0.3672285,
         "Ability": 0,
-        "GetBool": "Grindle"
+        "GetBool": "Grindle",
+        "Extra": null
       },
       {
-        "Type": 17,
+        "Type": 16,
         "X": -991.3478,
         "Y": 7.70743752,
         "Ability": 0,
-        "GetBool": "Enclave_Quest|visitedEnclave"
+        "GetBool": "Enclave_Quest|visitedEnclave",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasHallsMap"
@@ -418,53 +466,60 @@
   {
     "Pins": [
       {
-        "Type": 24,
+        "Type": 7,
         "X": -991.1597,
         "Y": 7.474863,
         "Ability": 0,
-        "GetBool": "pdb|visitedLibrary"
+        "GetBool": "pdb|visitedLibrary",
+        "Extra": null
       },
       {
         "Type": 2,
         "X": -988.4571,
         "Y": 6.643812,
         "Ability": 0,
-        "GetBool": "Library_08"
+        "GetBool": "Library_08",
+        "Extra": null
       },
       {
         "Type": 0,
         "X": -989.9366,
         "Y": 5.92293358,
         "Ability": 0,
-        "GetBool": "Library_05"
+        "GetBool": "Library_05",
+        "Extra": null
       },
       {
         "Type": 12,
         "X": -991.649,
         "Y": 4.702053,
         "Ability": 0,
-        "GetBool": "Library_16"
+        "GetBool": "Library_16",
+        "Extra": null
       },
       {
-        "Type": 8,
+        "Type": 31,
         "X": -989.8654,
         "Y": 7.15197754,
         "Ability": 0,
-        "GetBool": "Psalm Cylinder Library Roof"
+        "GetBool": "Psalm Cylinder Library Roof",
+        "Extra": null
       },
       {
-        "Type": 8,
+        "Type": 31,
         "X": -988.6418,
         "Y": 6.610092,
         "Ability": 0,
-        "GetBool": "Psalm Cylinder Librarian"
+        "GetBool": "Psalm Cylinder Librarian",
+        "Extra": null
       },
       {
         "Type": 19,
         "X": -993.6354,
         "Y": 4.899252,
         "Ability": 0,
-        "GetBool": "Dazzle Bind"
+        "GetBool": "Dazzle Bind",
+        "Extra": null
       },
       {
         "Type": 19,
@@ -480,88 +535,100 @@
   {
     "Pins": [
       {
-        "Type": 4,
+        "Type": 27,
         "X": -1004.68311,
         "Y": -0.101977348,
         "Ability": 0,
-        "GetBool": "Bone Record Understore_Map_Room"
+        "GetBool": "Bone Record Understore_Map_Room",
+        "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 7,
         "X": -1004.77173,
         "Y": 0.406037331,
         "Ability": 0,
-        "GetBool": "pdb|visitedUnderstore"
+        "GetBool": "pdb|visitedUnderstore",
+        "Extra": null
       },
       {
         "Type": 3,
         "X": -997.0085,
         "Y": -0.0372209549,
         "Ability": 0,
-        "GetBool": "Under_19b"
+        "GetBool": "Under_19b",
+        "Extra": null
       },
       {
         "Type": 22,
         "X": -996.7295,
         "Y": 0.497851372,
         "Ability": 0,
-        "GetBool": "pdb|hasHarpoonDash"
+        "GetBool": "pdb|hasHarpoonDash",
+        "Extra": null
       },
       {
-        "Type": 8,
+        "Type": 31,
         "X": -1001.28162,
         "Y": 1.95770073,
         "Ability": 0,
-        "GetBool": "Psalm Cylinder Ward"
+        "GetBool": "Psalm Cylinder Ward",
+        "Extra": null
       },
       {
         "Type": 2,
         "X": -1001.39496,
         "Y": 1.44366455,
         "Ability": 0,
-        "GetBool": "Under_08"
+        "GetBool": "Under_08",
+        "Extra": null
       },
       {
         "Type": 1,
         "X": -998.9438,
         "Y": -0.00100040436,
         "Ability": 0,
-        "GetBool": "Under_10"
+        "GetBool": "Under_10",
+        "Extra": null
       },
       {
         "Type": 18,
         "X": -1002.85657,
         "Y": -1.9642067,
         "Ability": 0,
-        "GetBool": "Screw Attack"
+        "GetBool": "Screw Attack",
+        "Extra": null
       },
       {
         "Type": 1,
         "X": -994.0207,
         "Y": -0.245174408,
         "Ability": 0,
-        "GetBool": "Library_11b"
+        "GetBool": "Library_11b",
+        "Extra": null
       },
       {
-        "Type": 22,
+        "Type": 24,
         "X": -996.802734,
         "Y": 1.745389,
         "Ability": 0,
-        "GetBool": "cr|Toolmaster"
+        "GetBool": "Toolmaster",
+        "Extra": null
       },
       {
-        "Type": 17,
+        "Type": 16,
         "X": -995.8781,
         "Y": 1.51118183,
         "Ability": 0,
-        "GetBool": "Architect"
+        "GetBool": "Architect",
+        "Extra": null
       },
       {
-        "Type": 18,
+        "Type": 25,
         "X": -995.8695,
         "Y": 2.004527,
         "Ability": 0,
-        "GetBool": "WebShot Weaver|WebShot Forge|WebShot Architect"
+        "GetBool": "WebShot Weaver|WebShot Forge|WebShot Architect",
+        "Extra": "inv|Broken SilkShot|1"
       }
     ],
     "MapUnlock": "HasCitadelUnderstoreMap"
@@ -573,77 +640,88 @@
         "X": -992.9389,
         "Y": -4.87349272,
         "Ability": 6,
-        "GetBool": "Halfway_01"
+        "GetBool": "Halfway_01",
+        "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 7,
         "X": -985.372742,
         "Y": -5.16588831,
         "Ability": 0,
-        "GetBool": "pdb|visitedGreymoor"
+        "GetBool": "pdb|visitedGreymoor",
+        "Extra": null
       },
       {
         "Type": 2,
         "X": -994.6136,
         "Y": -5.965679,
         "Ability": 0,
-        "GetBool": "Greymoor_16"
+        "GetBool": "Greymoor_16",
+        "Extra": null
       },
       {
-        "Type": 22,
+        "Type": 24,
         "X": -998.563965,
         "Y": -5.20822859,
         "Ability": 0,
-        "GetBool": "cr|Reaper"
+        "GetBool": "Reaper",
+        "Extra": null
       },
       {
-        "Type": 4,
+        "Type": 27,
         "X": -989.3481,
         "Y": -5.332463,
         "Ability": 0,
-        "GetBool": "Bone Record Greymoor_flooded_corridor"
+        "GetBool": "Bone Record Greymoor_flooded_corridor",
+        "Extra": null
       },
       {
         "Type": 1,
         "X": -986.003052,
         "Y": -3.03566122,
         "Ability": 3,
-        "GetBool": "Greymoor_02"
+        "GetBool": "Greymoor_02",
+        "Extra": null
       },
       {
         "Type": 18,
         "X": -981.9169,
         "Y": -3.71748686,
         "Ability": 0,
-        "GetBool": "Tri Pin"
+        "GetBool": "Tri Pin",
+        "Extra": null
       },
       {
         "Type": 18,
         "X": -998.972046,
         "Y": -3.40796375,
         "Ability": 3,
-        "GetBool": "Pimpilo"
+        "GetBool": "Pimpilo",
+        "Extra": null
       },
       {
-        "Type": 22,
+        "Type": 24,
         "X": -999.1692,
         "Y": -4.24001551,
         "Ability": 0,
-        "GetBool": "cr|Witch"
+        "GetBool": "Witch",
+        "Extra": null
       },
       {
-        "Type": 17,
+        "Type": 16,
         "X": -997.944031,
         "Y": -6.362922,
         "Ability": 0,
-        "GetBool": "Flea"
+        "GetBool": "Flea",
+        "Extra": null
       },
       {
-        "Type": 17,
+        "Type": 16,
         "X": -992.6591,
         "Y": -4.401661,
         "Ability": 0,
-        "GetBool": "Greymoor"
+        "GetBool": "Greymoor",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasGreymoorMap"
@@ -651,60 +729,68 @@
   {
     "Pins": [
       {
-        "Type": 24,
+        "Type": 7,
         "X": -983.6346,
         "Y": 1.69658566,
         "Ability": 6,
-        "GetBool": "pdb|visitedShadow"
+        "GetBool": "pdb|visitedShadow",
+        "Extra": null
       },
       {
-        "Type": 14,
+        "Type": 25,
         "X": -978.252747,
         "Y": -0.5628605,
         "Ability": 0,
-        "GetBool": "Shadow_Weavehome"
+        "GetBool": "Shadow_Weavehome",
+        "Extra": null
       },
       {
         "Type": 2,
         "X": -989.3569,
         "Y": 1.83824444,
         "Ability": 0,
-        "GetBool": "Shadow_20"
+        "GetBool": "Shadow_20",
+        "Extra": null
       },
       {
         "Type": 2,
         "X": -980.453552,
         "Y": 4.378069,
         "Ability": 0,
-        "GetBool": "Shadow_27|Sack Corpse Pickup"
+        "GetBool": "Shadow_27|Sack Corpse Pickup",
+        "Extra": null
       },
       {
         "Type": 19,
         "X": -983.6478,
         "Y": 3.87494755,
         "Ability": 0,
-        "GetBool": "Quick Sling"
+        "GetBool": "Quick Sling",
+        "Extra": null
       },
       {
         "Type": 0,
         "X": -978.67804,
         "Y": 3.768425,
         "Ability": 0,
-        "GetBool": "Shadow_13"
+        "GetBool": "Shadow_13",
+        "Extra": null
       },
       {
         "Type": 14,
         "X": -987.9,
         "Y": 2.22864342,
         "Ability": 0,
-        "GetBool": "Shadow_20|Collectable Item Pickup (1)"
+        "GetBool": "Shadow_20|Collectable Item Pickup (1)",
+        "Extra": null
       },
       {
-        "Type": 14,
+        "Type": 50,
         "X": -983.63324,
         "Y": 6.448368,
         "Ability": 0,
-        "GetBool": "Shadow_Bilehaven_Room|Collectable Item Pickup (1)"
+        "GetBool": "Shadow_Bilehaven_Room|Collectable Item Pickup (1)",
+        "Extra": null
       },
       {
         "Type": 18,
@@ -724,56 +810,56 @@
         "X": -974.245361,
         "Y": 7.475876,
         "Ability": 0,
-        "GetBool": "Aqueduct_05"
+        "GetBool": "Aqueduct_05",
+        "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 7,
         "X": -984.545837,
         "Y": 8.427856,
         "Ability": 0,
-        "GetBool": "pdb|visitedAqueducts"
+        "GetBool": "pdb|visitedAqueducts",
+        "Extra": null
       },
       {
-        "Type": 14,
+        "Type": 39,
         "X": -987.03125,
         "Y": 7.663925,
         "Ability": 0,
-        "GetBool": "pdb|HasSlabKeyC"
+        "GetBool": "pdb|HasSlabKeyC",
+        "Extra": null
       },
       {
         "Type": 19,
         "X": -980.8131,
         "Y": 8.135084,
         "Ability": 0,
-        "GetBool": "Maggot Charm"
+        "GetBool": "Maggot Charm",
+        "Extra": null
       },
       {
         "Type": 21,
         "X": -989.9114,
         "Y": 0.6786413,
         "Ability": 0,
-        "GetBool": "pdb|hasParry"
+        "GetBool": "pdb|hasParry",
+        "Extra": null
       },
       {
         "Type": 19,
         "X": -985.904663,
         "Y": 6.854912,
         "Ability": 0,
-        "GetBool": "Longneedle"
+        "GetBool": "Longneedle",
+        "Extra": null
       },
       {
-        "Type": 18,
-        "X": -1012.30127,
-        "Y": 12.4236336,
-        "Ability": 5,
-        "GetBool": "WebShot Weaver|WebShot Forge|WebShot Architect"
-      },
-      {
-        "Type": 17,
+        "Type": 16,
         "X": -977.443542,
         "Y": 7.40002441,
         "Ability": 0,
-        "GetBool": "Flea"
+        "GetBool": "Flea",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasAqueductMap"
@@ -785,91 +871,104 @@
         "X": -979.4664,
         "Y": -7.74179363,
         "Ability": 7,
-        "GetBool": "Bone_East_25"
+        "GetBool": "Bone_East_25",
+        "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 7,
         "X": -986.8367,
         "Y": -11.760602,
         "Ability": 0,
-        "GetBool": "pdb|visitedWilds"
+        "GetBool": "pdb|visitedWilds",
+        "Extra": null
       },
       {
         "Type": 22,
         "X": -983.8129,
         "Y": -11.9739876,
         "Ability": 0,
-        "GetBool": "pdb|hasBrolly"
+        "GetBool": "pdb|hasBrolly",
+        "Extra": null
       },
       {
-        "Type": 4,
+        "Type": 27,
         "X": -982.314331,
         "Y": -12.182,
         "Ability": 2,
-        "GetBool": "Bone Record Bone_East_14"
+        "GetBool": "Bone Record Bone_East_14",
+        "Extra": null
       },
       {
         "Type": 0,
         "X": -985.5176,
         "Y": -11.5608187,
         "Ability": 2,
-        "GetBool": "Bone_East_20"
+        "GetBool": "Bone_East_20",
+        "Extra": null
       },
       {
         "Type": 19,
         "X": -988.0071,
         "Y": -11.9441061,
         "Ability": 0,
-        "GetBool": "Bell Bind"
+        "GetBool": "Bell Bind",
+        "Extra": null
       },
       {
         "Type": 0,
         "X": -979.877136,
         "Y": -12.3251019,
         "Ability": 0,
-        "GetBool": "Bone_East_LavaChallenge|Heart Piece (1)"
+        "GetBool": "Bone_East_LavaChallenge|Heart Piece (1)",
+        "Extra": null
       },
       {
         "Type": 20,
         "X": -976.019531,
         "Y": -12.6941452,
         "Ability": 0,
-        "GetBool": "Sprintmaster"
+        "GetBool": "Sprintmaster",
+        "Extra": null
       },
       {
-        "Type": 7,
+        "Type": 30,
         "X": -977.25824,
         "Y": -13.1397076,
         "Ability": 0,
-        "GetBool": "Weaver Record Sprint_Challenge"
+        "GetBool": "Weaver Record Sprint_Challenge",
+        "Extra": null
       },
       {
         "Type": 18,
         "X": -986.334839,
         "Y": -10.4119692,
         "Ability": 7,
-        "GetBool": "Curve Claws Upgraded"
+        "GetBool": "Curve Claws Upgraded",
+        "Extra": null
       },
       {
-        "Type": 17,
+        "Type": 16,
         "X": -985.7531,
         "Y": -9.295565,
         "Ability": 0,
-        "GetBool": "Rest"
+        "GetBool": "Rest",
+        "Extra": null
       },
       {
         "Type": 20,
         "X": -987.566956,
         "Y": -10.6790495,
         "Ability": -1,
-        "GetBool": "Weighted Anklet"
+        "GetBool": "Weighted Anklet",
+        "Extra": null
       },
       {
         "Type": 0,
         "X": -976.3546,
         "Y": -8.7829,
         "Ability": 7,
-        "GetBool": "qr|Sprintmaster Race"
+        "GetBool": "qr|Sprintmaster Race",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasWildsMap"
@@ -877,25 +976,28 @@
   {
     "Pins": [
       {
-        "Type": 24,
+        "Type": 7,
         "X": -990.8424,
         "Y": -9.166808,
         "Ability": 0,
-        "GetBool": "pdb|HuntersTrail"
+        "GetBool": "pdb|HuntersTrail",
+        "Extra": null
       },
       {
         "Type": 2,
         "X": -989.7944,
         "Y": -9.099282,
         "Ability": 0,
-        "GetBool": "Ant_20"
+        "GetBool": "Ant_20",
+        "Extra": null
       },
       {
-        "Type": 22,
+        "Type": 24,
         "X": -989.1128,
         "Y": -8.712221,
         "Ability": 2,
-        "GetBool": "cr|Warrior"
+        "GetBool": "Warrior",
+        "Extra": null
       },
       {
         "Type": 18,
@@ -906,25 +1008,28 @@
         "Extra": "pdb|SeenAntMerchantDead"
       },
       {
-        "Type": 17,
+        "Type": 16,
         "X": -994.626465,
         "Y": -7.86457348,
         "Ability": 0,
-        "GetBool": "Ant"
+        "GetBool": "Ant",
+        "Extra": null
       },
       {
         "Type": 19,
         "X": -994.5191,
         "Y": -7.758371,
         "Ability": 2,
-        "GetBool": "Fractured Mask"
+        "GetBool": "Fractured Mask",
+        "Extra": null
       },
       {
         "Type": 18,
         "X": -994.9852,
         "Y": -7.758371,
         "Ability": 2,
-        "GetBool": "Curve Claws"
+        "GetBool": "Curve Claws",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasHuntersNestMap"
@@ -932,74 +1037,84 @@
   {
     "Pins": [
       {
-        "Type": 24,
+        "Type": 7,
         "X": -996.7831,
         "Y": -11.6273584,
         "Ability": 0,
-        "GetBool": "pdb|visitedDeepDocks"
+        "GetBool": "pdb|visitedDeepDocks",
+        "Extra": null
       },
       {
         "Type": 22,
         "X": -995.3517,
         "Y": -10.1799364,
         "Ability": 0,
-        "GetBool": "pdb|hasDash"
+        "GetBool": "pdb|hasDash",
+        "Extra": null
       },
       {
         "Type": 1,
         "X": -995.7801,
         "Y": -12.9986439,
         "Ability": 0,
-        "GetBool": "Bone_East_13"
+        "GetBool": "Bone_East_13",
+        "Extra": null
       },
       {
         "Type": 0,
         "X": -998.632935,
         "Y": -11.0083866,
         "Ability": 0,
-        "GetBool": "Dock_08"
+        "GetBool": "Dock_08",
+        "Extra": null
       },
       {
         "Type": 1,
         "X": -988.380066,
         "Y": -12.9480553,
         "Ability": 5,
-        "GetBool": "Dock_03c"
+        "GetBool": "Dock_03c",
+        "Extra": null
       },
       {
         "Type": 3,
         "X": -990.4418,
         "Y": -12.3873711,
         "Ability": 0,
-        "GetBool": "Dock_03|Collectable Item Pickup"
+        "GetBool": "Dock_03|Collectable Item Pickup",
+        "Extra": null
       },
       {
         "Type": 18,
         "X": -991.6689,
         "Y": -12.1108532,
         "Ability": 0,
-        "GetBool": "Flintstone"
+        "GetBool": "Flintstone",
+        "Extra": null
       },
       {
         "Type": 2,
         "X": -996.1702,
         "Y": -15.3190374,
         "Ability": 0,
-        "GetBool": "Dock_13"
+        "GetBool": "Dock_13",
+        "Extra": null
       },
       {
-        "Type": 17,
+        "Type": 16,
         "X": -994.5244,
         "Y": -12.0828981,
         "Ability": 0,
-        "GetBool": "Forge"
+        "GetBool": "Forge",
+        "Extra": null
       },
       {
-        "Type": 18,
+        "Type": 25,
         "X": -994.0526,
         "Y": -12.0488634,
         "Ability": 0,
-        "GetBool": "WebShot Weaver|WebShot Forge|WebShot Architect"
+        "GetBool": "WebShot Weaver|WebShot Forge|WebShot Architect",
+        "Extra": "inv|Broken SilkShot|1"
       }
     ],
     "MapUnlock": "HasDocksMap"
@@ -1011,28 +1126,32 @@
         "X": -1007.156,
         "Y": -10.1025467,
         "Ability": 0,
-        "GetBool": "Bone Necklace"
+        "GetBool": "Bone Necklace",
+        "Extra": null
       },
       {
         "Type": 23,
         "X": -1009.27014,
         "Y": -9.123899,
         "Ability": 0,
-        "GetBool": "Memory_Silk_Heart_BellBeast"
+        "GetBool": "Memory_Silk_Heart_BellBeast",
+        "Extra": null
       },
       {
         "Type": 3,
         "X": -1003.11731,
         "Y": -9.531281,
         "Ability": 0,
-        "GetBool": "Bone_07"
+        "GetBool": "Bone_07",
+        "Extra": null
       },
       {
         "Type": 2,
         "X": -1005.715,
         "Y": -7.970865,
         "Ability": 3,
-        "GetBool": "Bone_18"
+        "GetBool": "Bone_18",
+        "Extra": null
       },
       {
         "Type": 2,
@@ -1047,14 +1166,16 @@
         "X": -1001.2088,
         "Y": -10.2096329,
         "Ability": 0,
-        "GetBool": "Straight Pin"
+        "GetBool": "Straight Pin",
+        "Extra": null
       },
       {
-        "Type": 16,
+        "Type": 5,
         "X": -1000.64215,
         "Y": -10.2096329,
         "Ability": 0,
-        "GetBool": "pdi|pinGalleriesCompleted|1"
+        "GetBool": "pdi|pinGalleriesCompleted|1",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasBoneforestMap"
@@ -1062,88 +1183,100 @@
   {
     "Pins": [
       {
-        "Type": 5,
+        "Type": 28,
         "X": -1003.50726,
         "Y": -6.84345531,
         "Ability": 0,
-        "GetBool": "Weaver Totem Witch"
+        "GetBool": "Weaver Totem Witch",
+        "Extra": null
       },
       {
         "Type": 10,
         "X": -1003.8938,
         "Y": -5.291089,
         "Ability": 3,
-        "GetBool": "Shellwood_01"
+        "GetBool": "Shellwood_01",
+        "Extra": null
       },
       {
         "Type": 10,
         "X": -1006.13678,
         "Y": -4.01440334,
         "Ability": 0,
-        "GetBool": "Shellwood_20"
+        "GetBool": "Shellwood_20",
+        "Extra": null
       },
       {
         "Type": 10,
         "X": -1007.9054,
         "Y": -4.25176239,
         "Ability": 0,
-        "GetBool": "Shellwood_10"
+        "GetBool": "Shellwood_10",
+        "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 7,
         "X": -1007.30481,
         "Y": -6.19391441,
         "Ability": 0,
-        "GetBool": "pdb|visitedShellwood"
+        "GetBool": "pdb|visitedShellwood",
+        "Extra": null
       },
       {
         "Type": 0,
         "X": -1006.02075,
         "Y": -4.78803635,
         "Ability": 0,
-        "GetBool": "Shellwood_14"
+        "GetBool": "Shellwood_14",
+        "Extra": null
       },
       {
         "Type": 22,
         "X": -1007.42151,
         "Y": -3.34831619,
         "Ability": 0,
-        "GetBool": "pdb|hasWalljump"
+        "GetBool": "pdb|hasWalljump",
+        "Extra": null
       },
       {
         "Type": 10,
         "X": -1006.31348,
         "Y": -2.75870132,
         "Ability": 3,
-        "GetBool": "Shellwood_26"
+        "GetBool": "Shellwood_26",
+        "Extra": null
       },
       {
         "Type": 10,
         "X": -1004.41614,
         "Y": -4.76659,
         "Ability": 3,
-        "GetBool": "Shellwood_15"
+        "GetBool": "Shellwood_15",
+        "Extra": null
       },
       {
         "Type": 10,
         "X": -1005.44836,
         "Y": -5.27994251,
         "Ability": 0,
-        "GetBool": "Shellwood_02"
+        "GetBool": "Shellwood_02",
+        "Extra": null
       },
       {
         "Type": 19,
         "X": -1007.15063,
         "Y": -5.49569464,
         "Ability": 0,
-        "GetBool": "Poison Pouch"
+        "GetBool": "Poison Pouch",
+        "Extra": null
       },
       {
         "Type": 18,
         "X": -1002.84039,
         "Y": -5.99110556,
         "Ability": 0,
-        "GetBool": "Harpoon"
+        "GetBool": "Harpoon",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasShellwoodMap"
@@ -1151,53 +1284,60 @@
   {
     "Pins": [
       {
-        "Type": 24,
+        "Type": 7,
         "X": -1011.90027,
         "Y": -2.77497768,
         "Ability": 0,
-        "GetBool": "pdb|visitedCoral"
+        "GetBool": "pdb|visitedCoral",
+        "Extra": null
       },
       {
         "Type": 2,
         "X": -1014.6344,
         "Y": -3.074627,
         "Ability": 0,
-        "GetBool": "Coral_02|Collectable Item Pickup (1)"
+        "GetBool": "Coral_02|Collectable Item Pickup (1)",
+        "Extra": null
       },
       {
         "Type": 19,
         "X": -1018.22772,
         "Y": -0.7100067,
         "Ability": -2,
-        "GetBool": "Magnetite Dice"
+        "GetBool": "Magnetite Dice",
+        "Extra": null
       },
       {
         "Type": 3,
         "X": -1011.739,
         "Y": -0.534191132,
         "Ability": 0,
-        "GetBool": "Coral_32"
+        "GetBool": "Coral_32",
+        "Extra": null
       },
       {
         "Type": 0,
         "X": -1018.26855,
         "Y": -2.66778374,
         "Ability": 0,
-        "GetBool": "Coral_19b"
+        "GetBool": "Coral_19b",
+        "Extra": null
       },
       {
         "Type": 22,
         "X": -1019.58203,
         "Y": -1.53587055,
         "Ability": 0,
-        "GetBool": "pdb|hasChargeSlash"
+        "GetBool": "pdb|hasChargeSlash",
+        "Extra": null
       },
       {
-        "Type": 17,
+        "Type": 16,
         "X": -1009.48584,
         "Y": 0.7532978,
         "Ability": 0,
-        "GetBool": "Flea"
+        "GetBool": "Flea",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasJudgeStepsMap"
@@ -1205,18 +1345,20 @@
   {
     "Pins": [
       {
-        "Type": 24,
+        "Type": 7,
         "X": -1006.74481,
         "Y": 0.84029007,
         "Ability": 0,
-        "GetBool": "pdb|visitedGrandGate"
+        "GetBool": "pdb|visitedGrandGate",
+        "Extra": null
       },
       {
         "Type": 1,
         "X": -1007.04816,
         "Y": 2.277052,
         "Ability": 0,
-        "GetBool": "Song_19_entrance"
+        "GetBool": "Song_19_entrance",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasSongGateMap"
@@ -1228,42 +1370,48 @@
         "X": -1019.44238,
         "Y": 1.01537609,
         "Ability": 0,
-        "GetBool": "Coral_23"
+        "GetBool": "Coral_23",
+        "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 7,
         "X": -1016.3302,
         "Y": 2.04480171,
         "Ability": 0,
-        "GetBool": "pdb|visitedCoralRiver"
+        "GetBool": "pdb|visitedCoralRiver",
+        "Extra": null
       },
       {
-        "Type": 14,
+        "Type": 36,
         "X": -1009.29608,
         "Y": 2.42058563,
         "Ability": 0,
-        "GetBool": "Bellshrine_Coral"
+        "GetBool": "Bellshrine_Coral",
+        "Extra": null
       },
       {
         "Type": 18,
         "X": -1015.36536,
         "Y": 4.399534,
         "Ability": 0,
-        "GetBool": "Zap Imbuement"
+        "GetBool": "Zap Imbuement",
+        "Extra": null
       },
       {
         "Type": 18,
         "X": -1020.01288,
         "Y": 4.278735,
         "Ability": 0,
-        "GetBool": "Conch Drill"
+        "GetBool": "Conch Drill",
+        "Extra": null
       },
       {
-        "Type": 14,
+        "Type": 48,
         "X": -1018.02734,
         "Y": 2.810318,
         "Ability": 0,
-        "GetBool": "Coral_41"
+        "GetBool": "Coral_41",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasCoralMap"
@@ -1275,109 +1423,115 @@
         "X": -1009.69153,
         "Y": -8.904056,
         "Ability": 0,
-        "GetBool": "pdb|mosstownAspidBerryCollected"
+        "GetBool": "pdb|mosstownAspidBerryCollected",
+        "Extra": null
       },
       {
         "Type": 9,
         "X": -1011.85358,
         "Y": -10.4096479,
         "Ability": -2,
-        "GetBool": "pdb|bonetownAspidBerryCollected"
+        "GetBool": "pdb|bonetownAspidBerryCollected",
+        "Extra": null
       },
       {
         "Type": 9,
         "X": -1012.62634,
         "Y": -11.96027,
         "Ability": 0,
-        "GetBool": "Tut_01b"
+        "GetBool": "Tut_01b",
+        "Extra": null
       },
       {
         "Type": 9,
         "X": -1014.328,
         "Y": -12.7441187,
         "Ability": 0,
-        "GetBool": "Tut_02"
+        "GetBool": "Tut_02",
+        "Extra": null
       },
       {
         "Type": 9,
         "X": -1017.806,
         "Y": -11.02588,
         "Ability": 0,
-        "GetBool": "pdb|bonegraveAspidBerryCollected"
+        "GetBool": "pdb|bonegraveAspidBerryCollected",
+        "Extra": null
       },
       {
-        "Type": 6,
+        "Type": 29,
         "X": -1013.09247,
         "Y": -8.629964,
         "Ability": 0,
-        "GetBool": "Seal Chit Aspid_01"
+        "GetBool": "Seal Chit Aspid_01",
+        "Extra": null
       },
       {
         "Type": 21,
         "X": -1011.35938,
         "Y": -8.248061,
         "Ability": 0,
-        "GetBool": "pdb|hasNeedleThrow"
+        "GetBool": "pdb|hasNeedleThrow",
+        "Extra": null
       },
       {
-        "Type": 22,
+        "Type": 24,
         "X": -1018.69958,
         "Y": -11.4715357,
         "Ability": 0,
-        "GetBool": "cr|Wanderer"
+        "GetBool": "Wanderer",
+        "Extra": null
       },
       {
-        "Type": 5,
+        "Type": 28,
         "X": -1014.19128,
         "Y": -10.2424831,
         "Ability": 1,
-        "GetBool": "Weaver Totem Bonetown_upper_room"
+        "GetBool": "Weaver Totem Bonetown_upper_room",
+        "Extra": null
       },
       {
         "Type": 1,
         "X": -1010.99622,
         "Y": -9.931442,
         "Ability": 0,
-        "GetBool": "Bone_11b"
+        "GetBool": "Bone_11b",
+        "Extra": null
       },
       {
-        "Type": 22,
+        "Type": 24,
         "X": -1016.14221,
         "Y": -11.9934006,
         "Ability": 7,
-        "GetBool": "cr|Spell"
+        "GetBool": "Spell",
+        "Extra": null
       },
       {
-        "Type": 19,
+        "Type": 16,
         "X": -1009.36206,
         "Y": -8.606008,
         "Ability": 0,
-        "GetBool": "Mosscreep Tool 1"
+        "GetBool": "Druid",
+        "Extra": null
       },
       {
-        "Type": 19,
-        "X": -1009.36206,
-        "Y": -8.606008,
-        "Ability": 6,
-        "GetBool": "Mosscreep Tool 2",
-        "Extra": "tool|Mosscreep Tool 1"
-      },
-      {
-        "Type": 17,
+        "Type": 16,
         "X": -1011.38586,
         "Y": -10.847331,
         "Ability": 0,
-        "GetBool": "Bonetown_Shop"
+        "GetBool": "Bonetown_Shop",
+        "Extra": null
       },
       {
-        "Type": 17,
+        "Type": 16,
         "X": -1011.898,
         "Y": -11.294692,
         "Ability": -2,
-        "GetBool": "Bonetown_Quest|visitedBoneBottom"
+        "GetBool": "Bonetown_Quest|visitedBoneBottom",
+        "Extra": null
       },
       {
-        "Type": 14,
+        "Type": 52,
         "X": -1016.00183,
         "Y": -11.1905432,
         "Ability": 0,
@@ -1389,7 +1543,8 @@
         "X": -1010.38159,
         "Y": -10.4185362,
         "Ability": -1,
-        "GetBool": "pdb|bonetownAspidBerryCollected"
+        "GetBool": "pdb|bonetownAspidBerryCollected",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasMossGrottoMap"
@@ -1401,7 +1556,8 @@
         "X": -1016.6427,
         "Y": -9.624106,
         "Ability": 0,
-        "GetBool": "Crawl_02"
+        "GetBool": "Crawl_02",
+        "Extra": null
       },
       {
         "Type": 11,
@@ -1432,35 +1588,40 @@
         "X": -1015.62006,
         "Y": -7.35923243,
         "Ability": 0,
-        "GetBool": "Dead Mans Purse|Shell Satchel"
+        "GetBool": "Dead Mans Purse|Shell Satchel",
+        "Extra": null
       },
       {
         "Type": 21,
         "X": -1023.2981,
         "Y": -8.611475,
         "Ability": 5,
-        "GetBool": "pdb|hasSilkCharge"
+        "GetBool": "pdb|hasSilkCharge",
+        "Extra": null
       },
       {
         "Type": 2,
         "X": -1018.67487,
         "Y": -10.1540384,
         "Ability": 0,
-        "GetBool": "Crawl_09"
+        "GetBool": "Crawl_09",
+        "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 7,
         "X": -1015.994,
         "Y": -7.80312,
         "Ability": 0,
-        "GetBool": "pdb|visitedCrawl"
+        "GetBool": "pdb|visitedCrawl",
+        "Extra": null
       },
       {
         "Type": 18,
         "X": -1017.92371,
         "Y": -7.534723,
         "Ability": 0,
-        "GetBool": "Lifeblood Syringe"
+        "GetBool": "Lifeblood Syringe",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasCrawlMap"
@@ -1468,60 +1629,68 @@
   {
     "Pins": [
       {
-        "Type": 24,
+        "Type": 7,
         "X": -1009.09747,
         "Y": -12.3630772,
         "Ability": 4,
-        "GetBool": "pdb|visitedWeave"
+        "GetBool": "pdb|visitedWeave",
+        "Extra": null
       },
       {
         "Type": 9,
         "X": -1013.01654,
         "Y": -13.5254917,
         "Ability": 0,
-        "GetBool": "Weave_03"
+        "GetBool": "Weave_03",
+        "Extra": null
       },
       {
         "Type": 19,
         "X": -1015.44269,
         "Y": -13.6364584,
         "Ability": 0,
-        "GetBool": "White Ring"
+        "GetBool": "White Ring",
+        "Extra": null
       },
       {
         "Type": 18,
         "X": -1010.078,
         "Y": -12.75113,
         "Ability": 6,
-        "GetBool": "Silk Snare"
+        "GetBool": "Silk Snare",
+        "Extra": null
       },
       {
         "Type": 1,
         "X": -1011.82257,
         "Y": -13.1224117,
         "Ability": 0,
-        "GetBool": "Weave_11"
+        "GetBool": "Weave_11",
+        "Extra": null
       },
       {
-        "Type": 7,
+        "Type": 30,
         "X": -1008.144,
         "Y": -12.3655567,
         "Ability": 0,
-        "GetBool": "Weaver Record Weave_08"
+        "GetBool": "Weaver Record Weave_08",
+        "Extra": null
       },
       {
         "Type": 0,
         "X": -1006.71594,
         "Y": -12.7072306,
         "Ability": 0,
-        "GetBool": "Weave_05b"
+        "GetBool": "Weave_05b",
+        "Extra": null
       },
       {
-        "Type": 17,
+        "Type": 16,
         "X": -1008.58057,
         "Y": -13.85895,
         "Ability": 0,
-        "GetBool": "CrestUpgrade"
+        "GetBool": "CrestUpgrade",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasWeavehomeMap"
@@ -1529,53 +1698,60 @@
   {
     "Pins": [
       {
-        "Type": 6,
+        "Type": 29,
         "X": -996.0615,
         "Y": 3.99899387,
         "Ability": 7,
-        "GetBool": "Seal Chit Silk Siphon"
+        "GetBool": "Seal Chit Silk Siphon",
+        "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 7,
         "X": -998.67334,
         "Y": 3.08457279,
         "Ability": 0,
-        "GetBool": "pdb|visitedWard"
+        "GetBool": "pdb|visitedWard",
+        "Extra": null
       },
       {
         "Type": 1,
         "X": -999.0635,
         "Y": 2.85787582,
         "Ability": 0,
-        "GetBool": "Ward_01"
+        "GetBool": "Ward_01",
+        "Extra": null
       },
       {
         "Type": 19,
         "X": -996.691345,
         "Y": 3.334323,
         "Ability": 0,
-        "GetBool": "Quickbind"
+        "GetBool": "Quickbind",
+        "Extra": null
       },
       {
-        "Type": 14,
+        "Type": 41,
         "X": -996.269348,
         "Y": 3.72326851,
         "Ability": 5,
-        "GetBool": "pdb|collectedWardBossKey"
+        "GetBool": "pdb|collectedWardBossKey",
+        "Extra": null
       },
       {
-        "Type": 6,
+        "Type": 29,
         "X": -1001.28363,
         "Y": 3.57906342,
         "Ability": 0,
-        "GetBool": "Seal Chit Ward Corpse"
+        "GetBool": "Seal Chit Ward Corpse",
+        "Extra": null
       },
       {
         "Type": 23,
         "X": -1001.21143,
         "Y": 2.21344185,
         "Ability": 0,
-        "GetBool": "Memory_Silk_Heart_WardBoss"
+        "GetBool": "Memory_Silk_Heart_WardBoss",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasWardMap"
@@ -1583,25 +1759,28 @@
   {
     "Pins": [
       {
-        "Type": 24,
+        "Type": 7,
         "X": -998.4687,
         "Y": 14.4181557,
         "Ability": 0,
-        "GetBool": "pdb|visitedCradle"
+        "GetBool": "pdb|visitedCradle",
+        "Extra": null
       },
       {
         "Type": 23,
         "X": -997.341248,
         "Y": 13.0423412,
         "Ability": 0,
-        "GetBool": "Memory_Silk_Heart_LaceTower"
+        "GetBool": "Memory_Silk_Heart_LaceTower",
+        "Extra": null
       },
       {
         "Type": 21,
         "X": -997.1906,
         "Y": 16.0541382,
         "Ability": 7,
-        "GetBool": "pdb|hasSilkBossNeedle"
+        "GetBool": "pdb|hasSilkBossNeedle",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasCradleMap"
@@ -1609,25 +1788,28 @@
   {
     "Pins": [
       {
-        "Type": 8,
+        "Type": 32,
         "X": -998.950745,
         "Y": -19.117918,
         "Ability": 0,
-        "GetBool": "Ancient Egg Abyss Middle"
+        "GetBool": "Ancient Egg Abyss Middle",
+        "Extra": null
       },
       {
-        "Type": 14,
+        "Type": 44,
         "X": -992.6673,
         "Y": -18.9823761,
         "Ability": 0,
-        "GetBool": "Abyss_08"
+        "GetBool": "Abyss_08",
+        "Extra": null
       },
       {
         "Type": 22,
         "X": -993.803467,
         "Y": -20.3017616,
         "Ability": 0,
-        "GetBool": "pdb|hasSuperJump"
+        "GetBool": "pdb|hasSuperJump",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasAbyssMap"
@@ -1635,11 +1817,12 @@
   {
     "Pins": [
       {
-        "Type": 24,
+        "Type": 7,
         "X": -975.9928,
         "Y": -4.73660946,
         "Ability": 7,
-        "GetBool": "pdb|HasCloverMap"
+        "GetBool": "pdb|HasCloverMap",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasCloverMap"
@@ -1655,7 +1838,7 @@
         "Extra": "pdb|HasGreymoorMap"
       },
       {
-        "Type": 4,
+        "Type": 27,
         "X": -995.384949,
         "Y": -0.739971161,
         "Ability": 0,

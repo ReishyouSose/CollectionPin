@@ -12,8 +12,6 @@ namespace CollectionPin
         public string MapUnlock { get; private set; } = string.Empty;
         public int DataIndex { get; private set; }
 
-        /// <summary>检测额外条件失败时不允许显示</summary>
-        public Func<PlayerData, bool>? ExtraCondition;
 
         public void Initialize(CollectionPinData data, string mapUnlock)
         {
@@ -22,7 +20,24 @@ namespace CollectionPin
             GetBool = data.GetBool;
             MapUnlock = mapUnlock;
             DataIndex = data.Index;
+            ExtraCondition = AnalysisExtra(data.Extra);
             AnalysisData();
+            if (ExtraCondition != null)
+                return;
+            switch (GetBool)
+            {
+                //碎面甲，见到蚂蚁商人就不显示
+                case "Fractured Mask":
+                    ExtraCondition = new Func<PlayerData, bool>(pd
+                        => !pd.scenesMapped.Contains("Ant_Merchant_left") || pd.SeenAntMerchantDead);
+                    break;
+
+                //弧爪，蚂蚁商人死了显示 SeenAntMerchantDead这是另一个pd
+                case "Curve Claws":
+                    ExtraCondition = new Func<PlayerData, bool>(pd
+                        => !pd.scenesMapped.Contains("Ant_Merchant_left") && !pd.SeenAntMerchantDead);
+                    break;
+            }
         }
 
         public bool IsMatch(string key, string id) => key == Key && id == ID;
@@ -45,8 +60,6 @@ namespace CollectionPin
             if (ExtraCondition?.Invoke(pd) == false)
                 return false;
 
-
-
             var config = ModConfig.Ins;
             bool isMapUnlock = pd.GetBool(MapUnlock);
             if (Pin == PinType.Map)
@@ -64,13 +77,12 @@ namespace CollectionPin
 
             switch (Ability)
             {
-
                 case AbilityType.NotAct3:
-                    if(pd.act3_wokeUp)
+                    if (pd.act3_wokeUp)
                         return false;
                     break;
                 case AbilityType.Act3:
-                    if(!pd.act3_wokeUp)
+                    if (!pd.act3_wokeUp)
                         return false;
                     break;
                 case AbilityType.None:
@@ -81,9 +93,10 @@ namespace CollectionPin
                     break;
             }
 
-            if (CollectedCheck())
+            if (CollectedCheck(pd))
             {
-                Collected = true;
+                if (Pin != PinType.ContainerPin)
+                    Collected = true;
                 return null;
             }
             return true;

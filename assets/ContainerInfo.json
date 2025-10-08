@@ -1,395 +1,479 @@
 [
   {
-    "Pins": [
-      {
-        "Type": 2,
-        "Act3": false,
-        "GetBool": "qr|Rock Rollers"
-      }
-    ],
     "Name": "Bonetown_Quest",
     "Hide": false,
-    "Right": true
-  },
-  {
+    "Right": true,
     "Pins": [
       {
-        "Type": 14,
+        "Type": 2,
         "Act3": false,
-        "GetBool": "pdb|PurchasedBonebottomFaithToken"
-      },
-      {
-        "Type": 19,
-        "Act3": false,
-        "GetBool": "Rosary Magnet"
-      },
-      {
-        "Type": 0,
-        "Act3": false,
-        "GetBool": "pdb|PurchasedBonebottomHeartPiece"
-      },
-      {
-        "Type": 3,
-        "Act3": false,
-        "GetBool": "pdb|PurchasedBonebottomToolMetal"
+        "GetBool": "qr|Rock Rollers",
+        "Extra": null
       }
-    ],
+    ]
+  },
+  {
     "Name": "Bonetown_Shop",
     "Hide": true,
-    "Right": true
-  },
-  {
+    "Right": true,
     "Pins": [
       {
-        "Type": 18,
+        "Type": 36,
         "Act3": false,
-        "GetBool": "Shakra Ring"
+        "GetBool": "pdb|PurchasedBonebottomFaithToken",
+        "Extra": null
+      },
+      {
+        "Type": 19,
+        "Act3": false,
+        "GetBool": "Rosary Magnet",
+        "Extra": null
       },
       {
         "Type": 0,
         "Act3": false,
-        "GetBool": "qr|Beastfly Hunt"
-      },
-      {
-        "Type": 0,
-        "Act3": true,
-        "GetBool": "qr|Destroy Thread Cores"
-      },
-      {
-        "Type": 0,
-        "Act3": true,
-        "GetBool": "qr|Ant Trapper"
-      },
-      {
-        "Type": 19,
-        "Act3": true,
-        "GetBool": "Pinstress Tool"
-      }
-    ],
-    "Name": "Bellhart_Quest",
-    "Hide": false,
-    "Right": true
-  },
-  {
-    "Pins": [
-      {
-        "Type": 2,
-        "Act3": false,
-        "GetBool": "pdb|PurchasedBelltownMemoryLocket"
-      },
-      {
-        "Type": 19,
-        "Act3": false,
-        "GetBool": "Multibind"
-      },
-      {
-        "Type": 1,
-        "Act3": false,
-        "GetBool": "pdb|PurchasedBelltownSpoolSegment"
-      }
-    ],
-    "Name": "Bellhart_Shop",
-    "Hide": true,
-    "Right": true
-  },
-  {
-    "Pins": [
-      {
-        "Type": 1,
-        "Act3": false,
-        "GetBool": "qr|Save Sherma"
-      },
-      {
-        "Type": 19,
-        "Act3": false,
-        "GetBool": "Reserve Bind"
-      },
-      {
-        "Type": 19,
-        "Act3": true,
-        "GetBool": "Dazzle Bind Upgraded"
-      }
-    ],
-    "Name": "Enclave_Quest",
-    "Hide": false,
-    "Right": true
-  },
-  {
-    "Pins": [
-      {
-        "Type": 20,
-        "Act3": false,
-        "GetBool": "Wallcling"
-      },
-      {
-        "Type": 0,
-        "Act3": false,
-        "GetBool": "pdb|MerchantEnclaveShellFragment"
-      },
-      {
-        "Type": 14,
-        "Act3": false,
-        "GetBool": "pdb|MerchantEnclaveWardKey"
-      },
-      {
-        "Type": 14,
-        "Act3": false,
-        "GetBool": "pdb|MerchantEnclaveSimpleKey"
-      },
-      {
-        "Type": 19,
-        "Act3": false,
-        "GetBool": "Spool Extender"
-      },
-      {
-        "Type": 20,
-        "Act3": false,
-        "GetBool": "Musician Charm"
-      },
-      {
-        "Type": 1,
-        "Act3": false,
-        "GetBool": "pdb|MerchantEnclaveSpoolPiece"
+        "GetBool": "pdb|PurchasedBonebottomHeartPiece",
+        "Extra": null
       },
       {
         "Type": 3,
         "Act3": false,
-        "GetBool": "pdb|MerchantEnclaveToolMetal"
+        "GetBool": "pdb|PurchasedBonebottomToolMetal",
+        "Extra": null
+      }
+    ]
+  },
+  {
+    "Name": "Bellhart_Quest",
+    "Hide": false,
+    "Right": true,
+    "Pins": [
+      {
+        "Type": 18,
+        "Act3": false,
+        "GetBool": "Shakra Ring",
+        "Extra": null
       },
       {
-        "Type": 8,
+        "Type": 0,
         "Act3": false,
-        "GetBool": "Seal Chit City Merchant"
+        "GetBool": "qr|Beastfly Hunt",
+        "Extra": null
+      },
+      {
+        "Type": 0,
+        "Act3": false,
+        "GetBool": "qr|Destroy Thread Cores",
+        "Extra": "pdb|act3_wokeUp"
+      },
+      {
+        "Type": 0,
+        "Act3": false,
+        "GetBool": "qr|Ant Trapper",
+        "Extra": "pdb|act3_wokeUp"
+      },
+      {
+        "Type": 19,
+        "Act3": false,
+        "GetBool": "Pinstress Tool",
+        "Extra": "pdb|act3_wokeUp"
       }
-    ],
+    ]
+  },
+  {
+    "Name": "Bellhart_Shop",
+    "Hide": true,
+    "Right": true,
+    "Pins": [
+      {
+        "Type": 2,
+        "Act3": false,
+        "GetBool": "pdb|PurchasedBelltownMemoryLocket",
+        "Extra": null
+      },
+      {
+        "Type": 19,
+        "Act3": false,
+        "GetBool": "Multibind",
+        "Extra": null
+      },
+      {
+        "Type": 1,
+        "Act3": false,
+        "GetBool": "pdb|PurchasedBelltownSpoolSegment",
+        "Extra": null
+      }
+    ]
+  },
+  {
+    "Name": "Enclave_Quest",
+    "Hide": false,
+    "Right": true,
+    "Pins": [
+      {
+        "Type": 1,
+        "Act3": false,
+        "GetBool": "qr|Save Sherma",
+        "Extra": null
+      },
+      {
+        "Type": 19,
+        "Act3": false,
+        "GetBool": "Reserve Bind",
+        "Extra": null
+      },
+      {
+        "Type": 19,
+        "Act3": false,
+        "GetBool": "Dazzle Bind Upgraded",
+        "Extra": "pdb|act3_wokeUp"
+      }
+    ]
+  },
+  {
     "Name": "Enclave_Shop",
     "Hide": true,
-    "Right": true
-  },
-  {
+    "Right": true,
     "Pins": [
       {
         "Type": 20,
         "Act3": false,
-        "GetBool": "Thief Charm"
+        "GetBool": "Wallcling",
+        "Extra": null
+      },
+      {
+        "Type": 0,
+        "Act3": false,
+        "GetBool": "pdb|MerchantEnclaveShellFragment",
+        "Extra": null
+      },
+      {
+        "Type": 40,
+        "Act3": false,
+        "GetBool": "pdb|MerchantEnclaveWardKey",
+        "Extra": "pdb|collectedWardKey|false"
+      },
+      {
+        "Type": 36,
+        "Act3": false,
+        "GetBool": "pdb|MerchantEnclaveSimpleKey",
+        "Extra": null
       },
       {
         "Type": 19,
         "Act3": false,
-        "GetBool": "Thief Claw"
+        "GetBool": "Spool Extender",
+        "Extra": null
+      },
+      {
+        "Type": 20,
+        "Act3": false,
+        "GetBool": "Musician Charm",
+        "Extra": null
       },
       {
         "Type": 1,
         "Act3": false,
-        "GetBool": "pdb|purchasedGrindleSpoolPiece"
+        "GetBool": "pdb|MerchantEnclaveSpoolPiece",
+        "Extra": null
       },
       {
-        "Type": 8,
+        "Type": 3,
         "Act3": false,
-        "GetBool": "Psalm Cylinder Grindle"
+        "GetBool": "pdb|MerchantEnclaveToolMetal",
+        "Extra": null
       },
       {
-        "Type": 15,
+        "Type": 31,
         "Act3": false,
-        "GetBool": "pdb|purchasedGrindleToolKit"
-      },
-      {
-        "Type": 20,
-        "Act3": true,
-        "GetBool": "Magnetite Dice"
-      },
-      {
-        "Type": 16,
-        "Act3": true,
-        "GetBool": "pdb|PurchasedPilgrimsRestToolPouch"
-      },
-      {
-        "Type": 2,
-        "Act3": true,
-        "GetBool": "pdb|PurchasedPilgrimsRestMemoryLocket"
+        "GetBool": "Seal Chit City Merchant",
+        "Extra": null
       }
-    ],
+    ]
+  },
+  {
     "Name": "Grindle",
     "Hide": true,
-    "Right": false
-  },
-  {
-    "Pins": [
-      {
-        "Type": 18,
-        "Act3": false,
-        "GetBool": "Sting Shard"
-      },
-      {
-        "Type": 19,
-        "Act3": false,
-        "GetBool": "Lava Charm"
-      },
-      {
-        "Type": 15,
-        "Act3": false,
-        "GetBool": "pdb|PurchasedForgeToolKit"
-      }
-    ],
-    "Name": "Forge",
-    "Hide": true,
-    "Right": true
-  },
-  {
-    "Pins": [
-      {
-        "Type": 18,
-        "Act3": false,
-        "GetBool": "Cogwork Saw"
-      },
-      {
-        "Type": 19,
-        "Act3": false,
-        "GetBool": "Brolly Spike"
-      },
-      {
-        "Type": 20,
-        "Act3": false,
-        "GetBool": "Scuttlebrace"
-      },
-      {
-        "Type": 15,
-        "Act3": false,
-        "GetBool": "pdb|PurchasedArchitectToolKit"
-      },
-      {
-        "Type": 14,
-        "Act3": false,
-        "GetBool": "pdb|PurchasedArchitectKey"
-      }
-    ],
-    "Name": "Architect",
-    "Hide": true,
-    "Right": true
-  },
-  {
+    "Right": false,
     "Pins": [
       {
         "Type": 20,
         "Act3": false,
-        "GetBool": "Weighted Anklet"
+        "GetBool": "Thief Charm",
+        "Extra": null
       },
-      {
-        "Type": 16,
-        "Act3": false,
-        "GetBool": "pdb|PurchasedPilgrimsRestToolPouch"
-      },
-      {
-        "Type": 2,
-        "Act3": false,
-        "GetBool": "pdb|PurchasedPilgrimsRestMemoryLocket"
-      }
-    ],
-    "Name": "Rest",
-    "Hide": true,
-    "Right": true
-  },
-  {
-    "Pins": [
       {
         "Type": 19,
         "Act3": false,
-        "GetBool": "Fractured Mask"
-      },
-      {
-        "Type": 18,
-        "Act3": false,
-        "GetBool": "Curve Claws"
-      }
-    ],
-    "Name": "Ant",
-    "Hide": true,
-    "Right": true
-  },
-  {
-    "Pins": [
-      {
-        "Type": 18,
-        "Act3": false,
-        "GetBool": "Flea Brew"
+        "GetBool": "Thief Claw",
+        "Extra": null
       },
       {
         "Type": 1,
         "Act3": false,
-        "GetBool": "pdb|MetCaravanTroupeLeaderJudge"
+        "GetBool": "pdb|purchasedGrindleSpoolPiece",
+        "Extra": null
       },
       {
-        "Type": 16,
+        "Type": 31,
         "Act3": false,
-        "GetBool": "Aqueduct_05|Caravan Troupe Leader Fleatopia NPC"
+        "GetBool": "Psalm Cylinder Grindle",
+        "Extra": null
       },
       {
-        "Type": 19,
+        "Type": 4,
         "Act3": false,
-        "GetBool": "Flea Charm"
-      },
-      {
-        "Type": 13,
-        "Act3": true,
-        "GetBool": ""
-      }
-    ],
-    "Name": "Flea",
-    "Hide": true,
-    "Right": false
-  },
-  {
-    "Pins": [
-      {
-        "Type": 15,
-        "Act3": false,
-        "GetBool": "qr|Crow Feathers"
-      },
-      {
-        "Type": 16,
-        "Act3": false,
-        "GetBool": "qr|Journal"
-      },
-      {
-        "Type": 14,
-        "Act3": false,
-        "GetBool": "Ant_08"
-      }
-    ],
-    "Name": "Greymoor",
-    "Hide": false,
-    "Right": true
-  },
-  {
-    "Pins": [
-      {
-        "Type": 22,
-        "Act3": false,
-        "GetBool": "cr|Hunter_v2"
+        "GetBool": "pdb|purchasedGrindleToolKit",
+        "Extra": null
       },
       {
         "Type": 20,
         "Act3": false,
-        "GetBool": "pdb|UnlockedExtraBlueSlot"
+        "GetBool": "Magnetite Dice",
+        "Extra": "pdb|act3_wokeUp"
+      },
+      {
+        "Type": 5,
+        "Act3": false,
+        "GetBool": "pdb|PurchasedPilgrimsRestToolPouch",
+        "Extra": "pdb|act3_wokeUp"
+      },
+      {
+        "Type": 2,
+        "Act3": false,
+        "GetBool": "pdb|PurchasedPilgrimsRestMemoryLocket",
+        "Extra": "pdb|act3_wokeUp"
+      }
+    ]
+  },
+  {
+    "Name": "Forge",
+    "Hide": true,
+    "Right": true,
+    "Pins": [
+      {
+        "Type": 18,
+        "Act3": false,
+        "GetBool": "Sting Shard",
+        "Extra": null
       },
       {
         "Type": 19,
         "Act3": false,
-        "GetBool": "pdb|UnlockedExtraYellowSlot"
+        "GetBool": "Lava Charm",
+        "Extra": null
       },
       {
-        "Type": 22,
+        "Type": 4,
         "Act3": false,
-        "GetBool": "cr|Hunter_v3"
-      },
-      {
-        "Type": 22,
-        "Act3": false,
-        "GetBool": "pdb|HasBoundCrestUpgrader"
+        "GetBool": "pdb|PurchasedForgeToolKit",
+        "Extra": null
       }
-    ],
+    ]
+  },
+  {
+    "Name": "Architect",
+    "Hide": true,
+    "Right": true,
+    "Pins": [
+      {
+        "Type": 18,
+        "Act3": false,
+        "GetBool": "Cogwork Saw",
+        "Extra": null
+      },
+      {
+        "Type": 19,
+        "Act3": false,
+        "GetBool": "Brolly Spike",
+        "Extra": null
+      },
+      {
+        "Type": 20,
+        "Act3": false,
+        "GetBool": "Scuttlebrace",
+        "Extra": null
+      },
+      {
+        "Type": 4,
+        "Act3": false,
+        "GetBool": "pdb|PurchasedArchitectToolKit",
+        "Extra": null
+      },
+      {
+        "Type": 42,
+        "Act3": false,
+        "GetBool": "pdb|PurchasedArchitectKey",
+        "Extra": null
+      }
+    ]
+  },
+  {
+    "Name": "Rest",
+    "Hide": true,
+    "Right": true,
+    "Pins": [
+      {
+        "Type": 20,
+        "Act3": false,
+        "GetBool": "Weighted Anklet",
+        "Extra": null
+      },
+      {
+        "Type": 5,
+        "Act3": false,
+        "GetBool": "pdb|PurchasedPilgrimsRestToolPouch",
+        "Extra": null
+      },
+      {
+        "Type": 2,
+        "Act3": false,
+        "GetBool": "pdb|PurchasedPilgrimsRestMemoryLocket",
+        "Extra": null
+      }
+    ]
+  },
+  {
+    "Name": "Ant",
+    "Hide": true,
+    "Right": true,
+    "Pins": [
+      {
+        "Type": 19,
+        "Act3": false,
+        "GetBool": "Fractured Mask",
+        "Extra": null
+      },
+      {
+        "Type": 18,
+        "Act3": false,
+        "GetBool": "Curve Claws",
+        "Extra": null
+      }
+    ]
+  },
+  {
+    "Name": "Flea",
+    "Hide": true,
+    "Right": false,
+    "Pins": [
+      {
+        "Type": 18,
+        "Act3": false,
+        "GetBool": "Flea Brew",
+        "Extra": null
+      },
+      {
+        "Type": 1,
+        "Act3": false,
+        "GetBool": "pdb|MetCaravanTroupeLeaderJudge",
+        "Extra": null
+      },
+      {
+        "Type": 5,
+        "Act3": false,
+        "GetBool": "Aqueduct_05|Caravan Troupe Leader Fleatopia NPC",
+        "Extra": null
+      },
+      {
+        "Type": 19,
+        "Act3": false,
+        "GetBool": "Flea Charm",
+        "Extra": null
+      },
+      {
+        "Type": 6,
+        "Act3": false,
+        "GetBool": "",
+        "Extra": "pdb|act3_wokeUp"
+      }
+    ]
+  },
+  {
+    "Name": "Greymoor",
+    "Hide": false,
+    "Right": true,
+    "Pins": [
+      {
+        "Type": 4,
+        "Act3": false,
+        "GetBool": "qr|Crow Feathers",
+        "Extra": null
+      },
+      {
+        "Type": 5,
+        "Act3": false,
+        "GetBool": "qr|Journal",
+        "Extra": null
+      },
+      {
+        "Type": 46,
+        "Act3": false,
+        "GetBool": "Ant_08",
+        "Extra": null
+      }
+    ]
+  },
+  {
     "Name": "CrestUpgrade",
     "Hide": false,
-    "Right": true
+    "Right": true,
+    "Pins": [
+      {
+        "Type": 24,
+        "Act3": false,
+        "GetBool": "Hunter_v2",
+        "Extra": null
+      },
+      {
+        "Type": 20,
+        "Act3": false,
+        "GetBool": "pdb|UnlockedExtraBlueSlot",
+        "Extra": null
+      },
+      {
+        "Type": 19,
+        "Act3": false,
+        "GetBool": "pdb|UnlockedExtraYellowSlot",
+        "Extra": null
+      },
+      {
+        "Type": 24,
+        "Act3": false,
+        "GetBool": "Hunter_v3",
+        "Extra": null
+      },
+      {
+        "Type": 22,
+        "Act3": false,
+        "GetBool": "pdb|HasBoundCrestUpgrader",
+        "Extra": null
+      }
+    ]
+  },
+  {
+    "Name": "Druid",
+    "Hide": false,
+    "Right": true,
+    "Pins": [
+      {
+        "Type": 19,
+        "Act3": false,
+        "GetBool": "Mosscreep Tool 1",
+        "Extra": null
+      },
+      {
+        "Type": 45,
+        "Act3": false,
+        "GetBool": "inv|Mossberry Stew|1",
+        "Extra": "qst|Great Gourmand|1"
+      },
+      {
+        "Type": 19,
+        "Act3": false,
+        "GetBool": "Mosscreep Tool 2",
+        "Extra": "pdb|hasDoubleJump"
+      }
+    ]
   }
 ]

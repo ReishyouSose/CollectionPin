@@ -1,4 +1,5 @@
 ﻿using CollectionPin.Scripts.Enums;
+using System;
 using UnityEngine;
 using static CollectionPin.CollectionPinController;
 
@@ -12,10 +13,12 @@ namespace CollectionPin.Scripts.MonoBehaviours
         public string ID { get; set; } = string.Empty;
         public bool Collected { get; set; }
         public DataValidType ValidType { get; protected set; }
+        /// <summary>检测额外条件失败时不允许显示</summary>
+        public Func<PlayerData, bool>? ExtraCondition;
         public abstract void CheckActive(string currectMap);
-        public virtual void AnalysisData()
+        public void AnalysisData()
         {
-            if (Pin == PinType.Inv || Pin == PinType.Container)
+            if (Pin == PinType.Container)
                 return;
 
             if (string.IsNullOrEmpty(GetBool))
@@ -37,10 +40,6 @@ namespace CollectionPin.Scripts.MonoBehaviours
                     Key = info[1];
                     ID = info[2];
                     break;
-                case "cr":
-                    ValidType = DataValidType.Crest;
-                    ID = info[1];
-                    break;
                 case "qr":
                     ValidType = DataValidType.QuestReward;
                     ID = info[1];
@@ -57,12 +56,21 @@ namespace CollectionPin.Scripts.MonoBehaviours
                         case PinType.ChoralCommandment:
                         case PinType.RuneHarp:
                         case PinType.Cylinder:
+                        case PinType.ArcanaEgg:
                             ValidType = DataValidType.Relic;
                             return;
                         case PinType.RedTool:
                         case PinType.BlueTool:
                         case PinType.YellowTool:
                             ValidType = DataValidType.Tool;
+                            return;
+                        case PinType.WebShot:
+                            if (ExtraCondition != null)
+                                break;
+                            ValidType = DataValidType.Tool;
+                            return;
+                        case PinType.Crest:
+                            ValidType = DataValidType.Crest;
                             return;
                         case PinType.SilkHeart:
                             ValidType = DataValidType.SceneVisited;
@@ -87,9 +95,8 @@ namespace CollectionPin.Scripts.MonoBehaviours
                     break;
             }
         }
-        public bool CollectedCheck()
+        public bool CollectedCheck(PlayerData pd)
         {
-            var pd = PlayerData.instance;
             switch (ValidType)
             {
                 case DataValidType.SceneData:
@@ -115,7 +122,7 @@ namespace CollectionPin.Scripts.MonoBehaviours
                     }
                     break;
                 case DataValidType.Crest:
-                    return pd.ToolEquips.GetData(ID).IsUnlocked;
+                    return pd.ToolEquips.GetData(Key).IsUnlocked;
                 case DataValidType.SceneVisited:
                     return pd.scenesVisited.Contains(GetBool);
                 case DataValidType.QuestReward:
@@ -127,6 +134,49 @@ namespace CollectionPin.Scripts.MonoBehaviours
             }
             return false;
         }
+        public Func<PlayerData, bool>? AnalysisExtra(string? Extra)
+        {
+            if (Extra == null)
+                return null;
+            string[] infos = Extra.Split('|');
+            string key = infos[1];
+            switch (infos[0])
+            {
+                case "pdb":
+                    bool target = infos.Length < 3;
+                    return new Func<PlayerData, bool>(pd => pd.GetBool(key) == target);
+                case "qst":
+                    if (!int.TryParse(infos[2], out int value))
+                    {
+                        Debug.Log("Quest state valid failed");
+                        break;
+                    }
+                    switch (value)
+                    {
+                        case 0:
+                            return new Func<PlayerData, bool>(pd => pd.QuestCompletionData.GetData(key).IsAccepted);
+                        case 1:
+                            return new Func<PlayerData, bool>(pd => QuestActive(pd.QuestCompletionData.GetData(key)));
+                        case 2:
+                            return new Func<PlayerData, bool>(pd => pd.QuestCompletionData.GetData(key).IsCompleted);
+                        case 3:
+                            return new Func<PlayerData, bool>(pd => !pd.QuestCompletionData.GetData(key).IsCompleted);
+                    }
+                    break;
+                case "tool":
+                    return new Func<PlayerData, bool>(pd => pd.Tools.GetData(key).IsUnlocked);
+                case "inv":
+                    if (!int.TryParse(infos[2], out value))
+                    {
+                        Debug.Log("Inv target valid failed");
+                        break;
+                    }
+                    return new Func<PlayerData, bool>(pd => pd.Collectables.GetData(key).Amount >= value);
+            }
+            return null;
+        }
+        public static bool QuestActive(QuestCompletionData.Completion quest)
+            => quest.IsAccepted && !quest.IsCompleted;
     }
 
 }

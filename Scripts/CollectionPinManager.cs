@@ -22,6 +22,7 @@ namespace CollectionPin.Scripts
         public Transform collectionTransform = null!;
         public GameObject pinTemplate = null!;
         public Sprite[] sprites = null!;
+        public Sprite bg = null!;
         public GameMap _gameMap = null!;
         public string assetPath = string.Empty;
         public int counter;
@@ -50,20 +51,18 @@ namespace CollectionPin.Scripts
             var bytes = File.ReadAllBytes(Path.Combine(assetPath, "Sprite.png"));
             Texture2D tex = new Texture2D(2, 2);
             tex.LoadImage(bytes);
-            int col = 9, row = 3, total = col * row--;
+            int col = 9, row = 6, total = col * row--;
             sprites = new Sprite[total];
             Vector2 center = Vector2.one / 2f;
             for (int i = 0; i < total; i++)
             {
-                var rect = new Rect(i % col * 160, (row - i / col) * 160, 160, 160);
-                if (i == total - 1)
-                {
-                    sprites[i] = Sprite.Create(tex, rect, new Vector2(0, 1), 100, 0,
-                        SpriteMeshType.FullRect, new Vector4(20, 20, 20, 20));
-                }
-                else
-                    sprites[i] = Sprite.Create(tex, rect, center);
+                var rect = new Rect(i % col * 180, (row - i / col) * 180, 180, 180);
+                sprites[i] = Sprite.Create(tex, rect, center);
             }
+            var bgTex = new Texture2D(2, 2);
+            bgTex.LoadImage(File.ReadAllBytes(Path.Combine(assetPath, "Container.png")));
+            bg = Sprite.Create(bgTex, new Rect(0, 0, 220, 220), new Vector2(0, 1), 100, 0,
+                SpriteMeshType.FullRect, new Vector4(20, 20, 20, 20));
             zoneToMap = new Dictionary<MapZone, string>()
             {
                 {MapZone.NONE, ""},
@@ -311,11 +310,6 @@ namespace CollectionPin.Scripts
 
             var pin = newPin.AddComponent<CollectionPinController>();
             pin.Initialize(info, mapUnlock);
-            pin.ExtraCondition = ExtraCheck2(info.Extra) ?? ExtraCheck(pin);
-            if (pin.ExtraCondition != null)
-            {
-                Debug.Log(pin + " has extra condition");
-            }
             int pinType = (int)pin.Pin;
             newPin.name = pin.Pin.ToString();
 
@@ -341,18 +335,17 @@ namespace CollectionPin.Scripts
                     UObj.DestroyImmediate(container.GetComponent<MapPin>());
 
                     var controller = container.AddComponent<CollectionPinController>();
-                    int pinType_c = (int)PinType.Container;
                     controller.Initialize(new CollectionPinData()
                     {
-                        PinType = pinType_c,
+                        PinType = (int)PinType.Container,
                     }, string.Empty);
 
                     var containerSR = container.GetComponent<SpriteRenderer>();
-                    containerSR.sprite = sprites[pinType_c];
+                    containerSR.sprite = bg;
+                    containerSR.drawMode = SpriteDrawMode.Sliced;
 
-                    container.transform.localPosition
-                        = new Vector3(pos.x, pos.y, pos.z);
-                    containerPin.SetContainer(data, container, containerSR);
+                    container.transform.localPosition = new Vector3(pos.x, pos.y, pos.z);
+                    containerPin.SetContainer(data, container);
 
                     if (data.Hide)
                         UObj.Destroy(sr);
@@ -417,62 +410,6 @@ namespace CollectionPin.Scripts
                     container.HideContainer();
             }
         }
-        private Func<PlayerData, bool>? ExtraCheck2(string? extra)
-        {
-            if (extra == null)
-                return null;
-            string[] infos = extra.Split('|');
-            string key = infos[1];
-            switch (infos[0])
-            {
-                case "pdb":
-                    bool target = infos.Length < 3;
-                    return new Func<PlayerData, bool>(pd => pd.GetBool(key) == target);
-                case "qst":
-                    if (!int.TryParse(infos[2], out int value))
-                    {
-                        Debug.Log("Quest state valid failed");
-                        break;
-                    }
-                    switch (value)
-                    {
-                        case 0:
-                            return new Func<PlayerData, bool>(pd => pd.QuestCompletionData.GetData(key).IsAccepted);
-                        case 1:
-                            return new Func<PlayerData, bool>(pd => QuestActive(pd.QuestCompletionData.GetData(key)));
-                        case 2:
-                            return new Func<PlayerData, bool>(pd => pd.QuestCompletionData.GetData(key).IsCompleted);
-                        case 3:
-                            return new Func<PlayerData, bool>(pd => !pd.QuestCompletionData.GetData(key).IsCompleted);
-                    }
-                    break;
-                case "tool":
-                    return new Func<PlayerData, bool>(pd => pd.Tools.GetData(key).IsUnlocked);
-            }
-            return null;
-        }
-        private Func<PlayerData, bool>? ExtraCheck(CollectionPinController data)
-        {
-            var Ability = data.Ability;
-            var GetBool = data.GetBool;
-
-            switch (GetBool)
-            {
-                //碎面甲，见到蚂蚁商人就不显示
-                case "Fractured Mask":
-                    return new Func<PlayerData, bool>(pd
-                        => !pd.scenesMapped.Contains("Ant_Merchant_left") || pd.SeenAntMerchantDead);
-
-                //弧爪，蚂蚁商人死了显示 SeenAntMerchantDead这是另一个pd
-                case "Curve Claws":
-                    if (Ability == AbilityType.hasBrolly)
-                        return new Func<PlayerData, bool>(pd => !pd.scenesMapped.Contains("Ant_Merchant_left") && !pd.SeenAntMerchantDead);
-                    break;
-            }
-            return null;
-        }
-        public static bool QuestActive(QuestCompletionData.Completion quest)
-            => quest.IsAccepted && !quest.IsCompleted;
         public static Vector2 V3toV2(Vector3 v) => new Vector2(v.x, v.y);
     }
 }
