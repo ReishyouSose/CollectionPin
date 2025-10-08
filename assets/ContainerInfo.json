@@ -383,9 +383,9 @@
       },
       {
         "Type": 6,
-        "Act3": false,
-        "GetBool": "",
-        "Extra": "pdb|act3_wokeUp"
+        "Act3": true,
+        "GetBool": "qr|Flea Games",
+        "Extra": "qst|Flea Games Pre|0"
       }
     ]
   },
