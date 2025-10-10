@@ -27,7 +27,6 @@ namespace CollectionPin.Scripts
         public string assetPath = string.Empty;
         public int counter;
         public CollectionPinData? copy;
-        private bool isPlaceMode;
         private int Counter => counter++;
         private static readonly Func<PlayerData, bool> act3 = new Func<PlayerData, bool>(pd => pd.act3_wokeUp);
         private static readonly Func<PlayerData, bool> notAct3 = new Func<PlayerData, bool>(pd => !pd.act3_wokeUp);
@@ -123,18 +122,6 @@ namespace CollectionPin.Scripts
         }
         public void HandleInput(bool placeMode, Transform pointer)
         {
-            if (isPlaceMode != placeMode)
-            {
-                isPlaceMode = placeMode;
-                if (!isPlaceMode)
-                {
-                    foreach (Transform trans in collectionTransform)
-                    {
-                        if (trans.TryGetComponent<PinContainer>(out var pin))
-                            pin.HideContainer();
-                    }
-                }
-            }
             if (placeMode && Input.GetKeyDown(KeyCode.Delete))
             {
                 var pos = pointer.position;
@@ -412,5 +399,13 @@ namespace CollectionPin.Scripts
             }
         }
         public static Vector2 V3toV2(Vector3 v) => new Vector2(v.x, v.y);
+        public void HideAllContainers()
+        {
+            foreach (Transform trans in collectionTransform)
+            {
+                if (trans.TryGetComponent<PinContainer>(out var pin))
+                    pin.HideContainer();
+            }
+        }
     }
 }

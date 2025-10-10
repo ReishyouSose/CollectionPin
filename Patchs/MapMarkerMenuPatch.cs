@@ -19,6 +19,12 @@ namespace CollectionPin.Patchs
             CollectionPinManager.Ins.HandleInput(__instance.inPlacementMode, __instance.placementBox.transform);
         }
 
+        [HarmonyPatch(nameof(MapMarkerMenu.Close))]
+        [HarmonyPostfix]
+        private static void Close()
+        {
+            CollectionPinManager.Ins.HideAllContainers();
+        }
         [HarmonyPatch(nameof(MapMarkerMenu.PanMap))]
         [HarmonyTranspiler]
         private static List<CodeInstruction> PanMap_IL(IEnumerable<CodeInstruction> codes)
