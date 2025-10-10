@@ -28,7 +28,11 @@ namespace CollectionPin.Scripts.MonoBehaviours
             if (Collected)
                 return false;
 
+            if (ModConfig.Ins.PinsFilter.TryGetValue(Pin, out var entry) && !entry.Value)
+                return false;
+
             var pd = PlayerData.instance;
+
             if (ExtraCondition?.Invoke(pd) == false)
                 return false;
 

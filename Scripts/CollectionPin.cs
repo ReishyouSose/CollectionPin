@@ -7,7 +7,7 @@ namespace CollectionPin.Scripts
     public class CollectionPin : BaseUnityPlugin
     {
         public const string Guid = "Reits.CollectionPin";
-        public const string Version = "1.0.2.2";
+        public const string Version = "1.0.3.0";
         public void Awake()
         {
             ModConfig.Create(Config);

@@ -52,6 +52,9 @@ namespace CollectionPin
             if (Collected)
                 return null;
 
+            if (ModConfig.Ins.PinsFilter.TryGetValue(Pin, out var entry) && !entry.Value)
+                return false;
+
             PlayerData pd = PlayerData.instance;
 
             if (!string.IsNullOrEmpty(map) && MapUnlock != map)

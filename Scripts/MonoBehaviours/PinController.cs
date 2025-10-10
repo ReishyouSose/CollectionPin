@@ -122,14 +122,15 @@ namespace CollectionPin.Scripts.MonoBehaviours
                         Debug.Log("pdi target parse failed");
                         break;
                     }
+                    int current = pd.GetInt(Key);
                     switch (ID[0])
                     {
                         case '>':
-                            return pd.GetInt(id) > value;
+                            return current > value;
                         case '=':
-                            return pd.GetInt(id) == value;
+                            return current == value;
                         case '<':
-                            return pd.GetInt(id) < value;
+                            return current < value;
                     }
                     Debug.Log("Compare char valid failed");
                     break;
@@ -193,7 +194,7 @@ namespace CollectionPin.Scripts.MonoBehaviours
                     bool target = infos.Length < 3;
                     return new Func<PlayerData, bool>(pd => pd.GetBool(key) == target);
                 case "pdi":
-                    if (!int.TryParse(key = infos[2][1..], out int value))
+                    if (!int.TryParse(infos[2][1..], out int value))
                     {
                         Debug.Log("pdi target parse failed");
                         break;
@@ -242,6 +243,10 @@ namespace CollectionPin.Scripts.MonoBehaviours
         }
         public static bool QuestActive(QuestCompletionData.Completion quest)
             => quest.IsAccepted && !quest.IsCompleted;
-    }
 
+        public override string ToString()
+        {
+            return $"Pin:{Pin}  GetBool:{GetBool}";
+        }
+    }
 }
