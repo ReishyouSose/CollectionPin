@@ -14,6 +14,7 @@
             Crest,//纹章
             SceneVisited,
             QuestReward,
+            QuestState,
             Container,
         }
     }

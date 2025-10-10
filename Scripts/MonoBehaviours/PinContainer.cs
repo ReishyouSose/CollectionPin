@@ -56,9 +56,14 @@ namespace CollectionPin.Scripts.MonoBehaviours
             if (!needRefresh)
                 return;
             needRefresh = false;
+
             int x = -1, y = 0;
-            float spacing = 0.8f;
+            float spacing = 0.85f;
+
+            float borderOffset = 0.25f;
+
             int amount = CalculateItemsPerRow(activeCount);
+
             foreach (Transform trans in Container.transform)
             {
                 if (!trans.gameObject.activeSelf)
@@ -69,10 +74,20 @@ namespace CollectionPin.Scripts.MonoBehaviours
                     x = 0;
                     y++;
                 }
-                trans.localPosition = new Vector3((x + 0.5f) * spacing, (-y - 0.5f) * spacing, -0.1f);
+
+                // 在border内部开始布局
+                trans.localPosition = new Vector3(
+                    (x + 0.5f) * spacing + borderOffset,
+                    (-y - 0.5f) * spacing - borderOffset,
+                    -0.1f
+                );
             }
+
             var sr = Container.GetComponent<SpriteRenderer>();
-            var size = sr.size = new Vector2(amount * spacing, (y + 1) * spacing);
+
+            borderOffset *= 2f;
+            var size = sr.size = new Vector2(amount * spacing + borderOffset, (y + 1) * spacing + borderOffset);
+
             var p = sr.transform.localPosition;
             float xOffset = Info.Right ? 0.5f : (-size.x - 0.5f);
             sr.transform.localPosition = new Vector3(p.x + xOffset, p.y + size.y / 2f, p.z);

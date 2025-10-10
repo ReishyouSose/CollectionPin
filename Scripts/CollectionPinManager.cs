@@ -51,7 +51,7 @@ namespace CollectionPin.Scripts
             var bytes = File.ReadAllBytes(Path.Combine(assetPath, "Sprite.png"));
             Texture2D tex = new Texture2D(2, 2);
             tex.LoadImage(bytes);
-            int col = 9, row = 6, total = col * row--;
+            int col = 9, row = 7, total = col * row--;
             sprites = new Sprite[total];
             Vector2 center = Vector2.one / 2f;
             for (int i = 0; i < total; i++)
@@ -61,8 +61,8 @@ namespace CollectionPin.Scripts
             }
             var bgTex = new Texture2D(2, 2);
             bgTex.LoadImage(File.ReadAllBytes(Path.Combine(assetPath, "Container.png")));
-            bg = Sprite.Create(bgTex, new Rect(0, 0, 220, 220), new Vector2(0, 1), 100, 0,
-                SpriteMeshType.FullRect, new Vector4(20, 20, 20, 20));
+            bg = Sprite.Create(bgTex, new Rect(0, 0, 260, 260), new Vector2(0, 1), 100, 0,
+                SpriteMeshType.FullRect, new Vector4(40, 40, 40, 40));
             zoneToMap = new Dictionary<MapZone, string>()
             {
                 {MapZone.NONE, ""},

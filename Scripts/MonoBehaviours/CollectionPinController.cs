@@ -71,6 +71,7 @@ namespace CollectionPin
                     Collected = true;
                     return null;
                 }
+                return true;
             }
             else if (config.MapLock.Value && !isMapUnlock)
                 return false;

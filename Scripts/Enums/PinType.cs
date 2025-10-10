@@ -25,7 +25,6 @@
         WhiteTool,//法术
         Ability,//能力
         SilkHeart,//丝之心
-        Crest,//纹章
         WebShot,//丝弹
         BoneScroll = 27,//骨卷轴
         WeaverEffigy,//编织者雕像
@@ -49,6 +48,14 @@
         Bacon,//熏肉
         SoulBug,//追寻者
         SoulHermit,//隐士
-        SoulChurch//教堂
+        SoulChurch,//教堂
+        HunterV2 = 54,
+        HunterV3,
+        Reaper,//收割
+        Wanderer,//漫游
+        Warrior,//野兽
+        Witch,//巫妪
+        ToolMaster,//建筑师
+        Spell,//萨满
     }
 }

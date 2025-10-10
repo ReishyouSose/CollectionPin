@@ -148,7 +148,7 @@
         "Extra": "qst|Pinstress Battle|0"
       },
       {
-        "Type": 25,
+        "Type": 24,
         "X": -1012.30127,
         "Y": 12.4236336,
         "Ability": 5,
@@ -607,7 +607,7 @@
         "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 60,
         "X": -996.802734,
         "Y": 1.745389,
         "Ability": 0,
@@ -623,7 +623,7 @@
         "Extra": null
       },
       {
-        "Type": 25,
+        "Type": 24,
         "X": -995.8695,
         "Y": 2.004527,
         "Ability": 0,
@@ -660,7 +660,7 @@
         "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 56,
         "X": -998.563965,
         "Y": -5.20822859,
         "Ability": 0,
@@ -700,12 +700,12 @@
         "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 59,
         "X": -999.1692,
         "Y": -4.24001551,
         "Ability": 0,
         "GetBool": "Witch",
-        "Extra": null
+        "Extra": "qst|Wood Witch Curse|0"
       },
       {
         "Type": 16,
@@ -737,7 +737,7 @@
         "Extra": null
       },
       {
-        "Type": 25,
+        "Type": 24,
         "X": -978.252747,
         "Y": -0.5628605,
         "Ability": 0,
@@ -992,7 +992,7 @@
         "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 58,
         "X": -989.1128,
         "Y": -8.712221,
         "Ability": 2,
@@ -1109,7 +1109,7 @@
         "Extra": null
       },
       {
-        "Type": 25,
+        "Type": 24,
         "X": -994.0526,
         "Y": -12.0488634,
         "Ability": 0,
@@ -1173,9 +1173,17 @@
         "Type": 5,
         "X": -1000.64215,
         "Y": -10.2096329,
-        "Ability": 0,
-        "GetBool": "pdi|pinGalleriesCompleted|1",
+        "Ability": -2,
+        "GetBool": "pdi|pinGalleriesCompleted|>0",
         "Extra": null
+      },
+      {
+        "Type": 5,
+        "X": -1000.64215,
+        "Y": -10.2096329,
+        "Ability": -1,
+        "GetBool": "Bone_12|Ladybug Craft Pickup",
+        "Extra": "pdi|pinGalleriesCompleted|<1"
       }
     ],
     "MapUnlock": "HasBoneforestMap"
@@ -1263,11 +1271,11 @@
         "Extra": null
       },
       {
-        "Type": 19,
+        "Type": 16,
         "X": -1007.15063,
         "Y": -5.49569464,
         "Ability": 0,
-        "GetBool": "Poison Pouch",
+        "GetBool": "FlowerHeart",
         "Extra": null
       },
       {
@@ -1475,7 +1483,7 @@
         "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 57,
         "X": -1018.69958,
         "Y": -11.4715357,
         "Ability": 0,
@@ -1499,7 +1507,7 @@
         "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 61,
         "X": -1016.14221,
         "Y": -11.9934006,
         "Ability": 7,
@@ -1820,9 +1828,9 @@
         "Type": 7,
         "X": -975.9928,
         "Y": -4.73660946,
-        "Ability": 7,
-        "GetBool": "pdb|HasCloverMap",
-        "Extra": null
+        "Ability": -1,
+        "GetBool": "pdb|act3_wokeUp",
+        "Extra": "pdi|GreenPrinceLocation|>2"
       }
     ],
     "MapUnlock": "HasCloverMap"

@@ -48,6 +48,10 @@ namespace CollectionPin.Scripts.MonoBehaviours
                     ValidType = DataValidType.Inv;
                     ID = info[1];
                     break;
+                case "qst":
+                    ValidType = DataValidType.QuestState;
+                    ID = info[2];
+                    break;
                 default:
                     switch (Pin)
                     {
@@ -65,11 +69,18 @@ namespace CollectionPin.Scripts.MonoBehaviours
                             ValidType = DataValidType.Tool;
                             return;
                         case PinType.WebShot:
-                            if (ExtraCondition != null)
+                            if (ExtraCondition == null)
                                 break;
                             ValidType = DataValidType.Tool;
                             return;
-                        case PinType.Crest:
+                        case PinType.HunterV2:
+                        case PinType.HunterV3:
+                        case PinType.Reaper:
+                        case PinType.Wanderer:
+                        case PinType.Warrior:
+                        case PinType.Witch:
+                        case PinType.ToolMaster:
+                        case PinType.Spell:
                             ValidType = DataValidType.Crest;
                             return;
                         case PinType.SilkHeart:
@@ -105,7 +116,23 @@ namespace CollectionPin.Scripts.MonoBehaviours
                 case DataValidType.PlayerDataBool:
                     return pd.GetBool(ID);
                 case DataValidType.PlayerDataInt:
-                    return pd.GetInt(Key) >= int.Parse(ID);
+                    string id = ID[1..];
+                    if (!int.TryParse(id, out int value))
+                    {
+                        Debug.Log("pdi target parse failed");
+                        break;
+                    }
+                    switch (ID[0])
+                    {
+                        case '>':
+                            return pd.GetInt(id) > value;
+                        case '=':
+                            return pd.GetInt(id) == value;
+                        case '<':
+                            return pd.GetInt(id) < value;
+                    }
+                    Debug.Log("Compare char valid failed");
+                    break;
                 case DataValidType.Relic:
                     return pd.Relics.GetData(GetBool).IsCollected;
                 case DataValidType.Inv:
@@ -127,6 +154,26 @@ namespace CollectionPin.Scripts.MonoBehaviours
                     return pd.scenesVisited.Contains(GetBool);
                 case DataValidType.QuestReward:
                     return pd.QuestCompletionData.GetData(ID).IsCompleted;
+                case DataValidType.QuestState:
+                    if (!int.TryParse(ID, out int target))
+                    {
+                        Debug.Log("qst state parse failed");
+                        return false;
+                    }
+                    switch (target)
+                    {
+                        case 0:
+                            return pd.QuestCompletionData.GetData(Key).IsAccepted;
+                        case 1:
+                            return QuestActive(pd.QuestCompletionData.GetData(Key));
+                        case 2:
+                            return pd.QuestCompletionData.GetData(Key).IsCompleted;
+                        case 3:
+                            return !pd.QuestCompletionData.GetData(Key).IsCompleted;
+                        default:
+                            Debug.Log("Invalid quest state target");
+                            return true;
+                    }
                 case DataValidType.Container:
                     if (!string.IsNullOrEmpty(ID) && !pd.GetBool(ID))
                         return false;
@@ -145,10 +192,27 @@ namespace CollectionPin.Scripts.MonoBehaviours
                 case "pdb":
                     bool target = infos.Length < 3;
                     return new Func<PlayerData, bool>(pd => pd.GetBool(key) == target);
-                case "qst":
-                    if (!int.TryParse(infos[2], out int value))
+                case "pdi":
+                    if (!int.TryParse(key = infos[2][1..], out int value))
                     {
-                        Debug.Log("Quest state valid failed");
+                        Debug.Log("pdi target parse failed");
+                        break;
+                    }
+                    switch (infos[2][0])
+                    {
+                        case '>':
+                            return new Func<PlayerData, bool>(pd => pd.GetInt(key) > value);
+                        case '=':
+                            return new Func<PlayerData, bool>(pd => pd.GetInt(key) == value);
+                        case '<':
+                            return new Func<PlayerData, bool>(pd => pd.GetInt(key) < value);
+                    }
+                    Debug.Log("Compare char valid failed");
+                    break;
+                case "qst":
+                    if (!int.TryParse(infos[2], out value))
+                    {
+                        Debug.Log("Quest state parse failed");
                         break;
                     }
                     switch (value)
@@ -162,6 +226,7 @@ namespace CollectionPin.Scripts.MonoBehaviours
                         case 3:
                             return new Func<PlayerData, bool>(pd => !pd.QuestCompletionData.GetData(key).IsCompleted);
                     }
+                    Debug.Log("Invalid quest state target");
                     break;
                 case "tool":
                     return new Func<PlayerData, bool>(pd => pd.Tools.GetData(key).IsUnlocked);
