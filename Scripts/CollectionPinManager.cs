@@ -344,7 +344,8 @@ namespace CollectionPin.Scripts
                     containerSR.sprite = bg;
                     containerSR.drawMode = SpriteDrawMode.Sliced;
 
-                    container.transform.localPosition = new Vector3(pos.x, pos.y, pos.z);
+                    container.transform.localPosition = pos;
+                    containerPin.Origin = pos;
                     containerPin.SetContainer(data, container);
 
                     if (data.Hide)

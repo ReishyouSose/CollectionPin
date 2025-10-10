@@ -8,6 +8,7 @@ namespace CollectionPin.Scripts.MonoBehaviours
     {
         public ContainerPinsList Info { get; private set; } = null!;
         public GameObject Container { get; private set; } = null!;
+        public Vector3 Origin { get; set; }
         private bool needRefresh;
         private int activeCount;
 
@@ -88,7 +89,7 @@ namespace CollectionPin.Scripts.MonoBehaviours
             borderOffset *= 2f;
             var size = sr.size = new Vector2(amount * spacing + borderOffset, (y + 1) * spacing + borderOffset);
 
-            var p = sr.transform.localPosition;
+            var p = Origin;
             float xOffset = Info.Right ? 0.5f : (-size.x - 0.5f);
             sr.transform.localPosition = new Vector3(p.x + xOffset, p.y + size.y / 2f, p.z);
         }
