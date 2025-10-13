@@ -30,8 +30,6 @@ namespace CollectionPin.Patchs
         private static List<CodeInstruction> PanMap_IL(IEnumerable<CodeInstruction> codes)
         {
             var list = codes.ToList();
-            if (!ModConfig.Ins.DebugMode.Value)
-                return list;
             for (int i = 0; i < list.Count; i++)
             {
                 var code = list[i];
@@ -56,7 +54,7 @@ namespace CollectionPin.Patchs
         }
         private static float LowSpeed(float value)
         {
-            if (Input.GetKey(KeyCode.Keypad0))
+            if (ModConfig.Ins.DebugMode.Value && Input.GetKey(KeyCode.Keypad0))
                 return value / 5f;
             return value;
         }

@@ -311,11 +311,7 @@ namespace CollectionPin.Scripts
 
             if (pin.Pin == PinType.ContainerPin)
             {
-                string[] keyAndID = pin.GetBool.Split('|');
-                string key = pin.Key = keyAndID[0];
-                if (keyAndID.Length > 1)
-                    pin.ID = keyAndID[1];
-                if (containerPins.TryGetValue(key, out var data))
+                if (containerPins.TryGetValue(pin.Key, out var data))
                 {
                     var containerPin = newPin.AddComponent<PinContainer>();
                     GameObject container = UObj.Instantiate(pinTemplate, collectionTransform);
@@ -332,14 +328,13 @@ namespace CollectionPin.Scripts
                     containerSR.drawMode = SpriteDrawMode.Sliced;
 
                     container.transform.localPosition = pos;
-                    containerPin.Origin = pos;
                     containerPin.SetContainer(data, container);
 
                     if (data.Hide)
                         UObj.Destroy(sr);
                 }
                 else
-                    Debug.Log("Not found quest data " + key);
+                    Debug.Log("Not found quest data " + pin.Key);
             }
             newPin.SetActive(true);
             if (log)

@@ -44,7 +44,7 @@ namespace CollectionPin.Scripts
                 return "Quest";
             else if (InRange(type, PinType.MossSoup, PinType.SoulChurch))
                 return "Quest";
-            else if (InRange(type, PinType.SimpleKey, PinType.Farsight))
+            else if (InRange(type, PinType.PlasmiumGland, PinType.Farsight))
                 return "KeyItem";
             else if (InRange(type, PinType.BoneScroll, PinType.ArcanaEgg))
                 return "Relic";

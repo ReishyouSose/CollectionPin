@@ -55,14 +55,6 @@
         "Extra": null
       },
       {
-        "Type": 18,
-        "X": -987.414063,
-        "Y": -1.64305258,
-        "Ability": 0,
-        "GetBool": "Tack",
-        "Extra": null
-      },
-      {
         "Type": 20,
         "X": -986.7174,
         "Y": -3.81985426,
@@ -87,12 +79,12 @@
         "Extra": null
       },
       {
-        "Type": 15,
-        "X": -987.135742,
-        "Y": -1.66422367,
+        "Type": 16,
+        "X": -987.414063,
+        "Y": -1.64305258,
         "Ability": 0,
-        "GetBool": "inv|Extractor Machine Pins",
-        "Extra": "qst|Doctor Curse Cure|1"
+        "GetBool": "Brother",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasDustpensMap"
@@ -722,6 +714,14 @@
         "Ability": 0,
         "GetBool": "Greymoor",
         "Extra": null
+      },
+      {
+        "Type": 21,
+        "X": -982.673157,
+        "Y": -2.401474,
+        "Ability": 0,
+        "GetBool": "pdb|hasThreadSphere",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasGreymoorMap"
@@ -918,7 +918,7 @@
         "Type": 0,
         "X": -979.877136,
         "Y": -12.3251019,
-        "Ability": 0,
+        "Ability": 5,
         "GetBool": "Bone_East_LavaChallenge|Heart Piece (1)",
         "Extra": null
       },
@@ -980,7 +980,7 @@
         "X": -990.8424,
         "Y": -9.166808,
         "Ability": 0,
-        "GetBool": "pdb|HuntersTrail",
+        "GetBool": "pdb|visitedHuntersTrail",
         "Extra": null
       },
       {
@@ -1184,6 +1184,14 @@
         "Ability": -1,
         "GetBool": "Bone_12|Ladybug Craft Pickup",
         "Extra": "pdi|pinGalleriesCompleted|<1"
+      },
+      {
+        "Type": 16,
+        "X": -1005.48651,
+        "Y": -10.3806038,
+        "Ability": 0,
+        "GetBool": "Flea",
+        "Extra": null
       }
     ],
     "MapUnlock": "HasBoneforestMap"
@@ -1271,19 +1279,19 @@
         "Extra": null
       },
       {
-        "Type": 16,
-        "X": -1007.15063,
-        "Y": -5.49569464,
-        "Ability": 0,
-        "GetBool": "FlowerHeart",
-        "Extra": null
-      },
-      {
         "Type": 18,
         "X": -1002.84039,
         "Y": -5.99110556,
         "Ability": 0,
         "GetBool": "Harpoon",
+        "Extra": null
+      },
+      {
+        "Type": 16,
+        "X": -1007.23834,
+        "Y": -5.52211046,
+        "Ability": 0,
+        "GetBool": "FlowerHeart",
         "Extra": null
       }
     ],
@@ -1390,15 +1398,7 @@
         "Extra": null
       },
       {
-        "Type": 36,
-        "X": -1009.29608,
-        "Y": 2.42058563,
-        "Ability": 0,
-        "GetBool": "Bellshrine_Coral",
-        "Extra": null
-      },
-      {
-        "Type": 18,
+        "Type": 19,
         "X": -1015.36536,
         "Y": 4.399534,
         "Ability": 0,
@@ -1419,6 +1419,14 @@
         "Y": 2.810318,
         "Ability": 0,
         "GetBool": "Coral_41",
+        "Extra": null
+      },
+      {
+        "Type": 36,
+        "X": -1008.70319,
+        "Y": 2.44687176,
+        "Ability": 0,
+        "GetBool": "Bellshrine_Coral",
         "Extra": null
       }
     ],
@@ -1539,20 +1547,20 @@
         "Extra": null
       },
       {
-        "Type": 52,
-        "X": -1016.00183,
-        "Y": -11.1905432,
-        "Ability": 0,
-        "GetBool": "inv|Snare Soul Churchkeeper",
-        "Extra": "qst|Soul Snare|1"
-      },
-      {
         "Type": 9,
         "X": -1010.38159,
         "Y": -10.4185362,
         "Ability": -1,
         "GetBool": "pdb|bonetownAspidBerryCollected",
         "Extra": null
+      },
+      {
+        "Type": 52,
+        "X": -1015.63489,
+        "Y": -11.2683945,
+        "Ability": 0,
+        "GetBool": "inv|Snare Soul Churchkeeper",
+        "Extra": "qst|Soul Snare|1"
       }
     ],
     "MapUnlock": "HasMossGrottoMap"
@@ -1624,11 +1632,11 @@
         "Extra": null
       },
       {
-        "Type": 18,
+        "Type": 16,
         "X": -1017.92371,
         "Y": -7.534723,
-        "Ability": 0,
-        "GetBool": "Lifeblood Syringe",
+        "Ability": 3,
+        "GetBool": "BlueScientist",
         "Extra": null
       }
     ],
@@ -1760,6 +1768,14 @@
         "Ability": 0,
         "GetBool": "Memory_Silk_Heart_WardBoss",
         "Extra": null
+      },
+      {
+        "Type": 1,
+        "X": -996.273254,
+        "Y": 3.318595,
+        "Ability": 0,
+        "GetBool": "qr|Save Sherma",
+        "Extra": "qst|Save Sherma|0"
       }
     ],
     "MapUnlock": "HasWardMap"

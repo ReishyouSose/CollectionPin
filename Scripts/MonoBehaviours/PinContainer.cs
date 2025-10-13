@@ -8,7 +8,6 @@ namespace CollectionPin.Scripts.MonoBehaviours
     {
         public ContainerPinsList Info { get; private set; } = null!;
         public GameObject Container { get; private set; } = null!;
-        public Vector3 Origin { get; set; }
         private bool needRefresh;
         private int activeCount;
 
@@ -25,11 +24,8 @@ namespace CollectionPin.Scripts.MonoBehaviours
             Container.name = "Quest_" + info.Name;
             Container.SetActive(false);
             Info = info;
-            bool act3 = PlayerData.instance.act3_wokeUp;
             foreach (var pin in Info.Pins)
             {
-                if (pin.Act3 && !act3)
-                    continue;
                 AddPinToContainer(pin);
             }
         }
@@ -89,9 +85,9 @@ namespace CollectionPin.Scripts.MonoBehaviours
             borderOffset *= 2f;
             var size = sr.size = new Vector2(amount * spacing + borderOffset, (y + 1) * spacing + borderOffset);
 
-            var p = Origin;
+            var p = transform.localPosition;
             float xOffset = Info.Right ? 0.5f : (-size.x - 0.5f);
-            sr.transform.localPosition = new Vector3(p.x + xOffset, p.y + size.y / 2f, p.z);
+            Container.transform.localPosition = new Vector3(p.x + xOffset, p.y + size.y / 2f, p.z);
         }
         public void HideContainer()
         {

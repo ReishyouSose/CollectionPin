@@ -1,13 +1,11 @@
 ﻿using CollectionPin.Scripts.DataStruct;
 using CollectionPin.Scripts.Enums;
-using UnityEngine;
 
 namespace CollectionPin.Scripts.MonoBehaviours
 {
     public class ContainerPinController : PinController
     {
         public bool Act3 { get; private set; }
-        public GameObject CollectedMarker { get; set; } = null!;
 
         public void Initialize(ContainerPinData data)
         {
@@ -32,6 +30,9 @@ namespace CollectionPin.Scripts.MonoBehaviours
                 return false;
 
             var pd = PlayerData.instance;
+
+            if (Act3 && !pd.act3_wokeUp)
+                return false;
 
             if (ExtraCondition?.Invoke(pd) == false)
                 return false;

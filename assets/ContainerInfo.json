@@ -108,7 +108,7 @@
   {
     "Name": "Enclave_Quest",
     "Hide": false,
-    "Right": true,
+    "Right": false,
     "Pins": [
       {
         "Type": 1,
@@ -124,16 +124,16 @@
       },
       {
         "Type": 19,
-        "Act3": false,
+        "Act3": true,
         "GetBool": "Dazzle Bind Upgraded",
-        "Extra": "pdb|act3_wokeUp"
+        "Extra": null
       }
     ]
   },
   {
     "Name": "Enclave_Shop",
     "Hide": true,
-    "Right": true,
+    "Right": false,
     "Pins": [
       {
         "Type": 20,
@@ -184,7 +184,7 @@
         "Extra": null
       },
       {
-        "Type": 31,
+        "Type": 29,
         "Act3": false,
         "GetBool": "Seal Chit City Merchant",
         "Extra": null
@@ -228,21 +228,45 @@
       },
       {
         "Type": 20,
-        "Act3": false,
+        "Act3": true,
         "GetBool": "Magnetite Dice",
-        "Extra": "pdb|act3_wokeUp"
+        "Extra": null
       },
       {
         "Type": 5,
-        "Act3": false,
+        "Act3": true,
         "GetBool": "pdb|PurchasedPilgrimsRestToolPouch",
-        "Extra": "pdb|act3_wokeUp"
+        "Extra": null
       },
       {
         "Type": 2,
-        "Act3": false,
+        "Act3": true,
         "GetBool": "pdb|PurchasedPilgrimsRestMemoryLocket",
-        "Extra": "pdb|act3_wokeUp"
+        "Extra": null
+      },
+      {
+        "Type": 19,
+        "Act3": true,
+        "GetBool": "Rosary Magnet",
+        "Extra": null
+      },
+      {
+        "Type": 3,
+        "Act3": true,
+        "GetBool": "pdb|PurchasedBonebottomToolMetal",
+        "Extra": null
+      },
+      {
+        "Type": 0,
+        "Act3": true,
+        "GetBool": "pdb|PurchasedBonebottomHeartPiece",
+        "Extra": null
+      },
+      {
+        "Type": 36,
+        "Act3": true,
+        "GetBool": "pdb|PurchasedBonebottomFaithToken",
+        "Extra": null
       }
     ]
   },
@@ -336,7 +360,7 @@
   {
     "Name": "Ant",
     "Hide": true,
-    "Right": true,
+    "Right": false,
     "Pins": [
       {
         "Type": 19,
@@ -410,7 +434,7 @@
         "Type": 46,
         "Act3": false,
         "GetBool": "Ant_08",
-        "Extra": null
+        "Extra": "qst|Great Gourmand|1"
       }
     ]
   },
@@ -420,7 +444,7 @@
     "Right": true,
     "Pins": [
       {
-        "Type": 24,
+        "Type": 54,
         "Act3": false,
         "GetBool": "Hunter_v2",
         "Extra": null
@@ -438,7 +462,7 @@
         "Extra": null
       },
       {
-        "Type": 24,
+        "Type": 55,
         "Act3": false,
         "GetBool": "Hunter_v3",
         "Extra": null
@@ -473,6 +497,69 @@
         "Act3": false,
         "GetBool": "Mosscreep Tool 2",
         "Extra": "pdb|hasDoubleJump"
+      }
+    ]
+  },
+  {
+    "Name": "FlowerHeart",
+    "Hide": false,
+    "Right": false,
+    "Pins": [
+      {
+        "Type": 19,
+        "Act3": false,
+        "GetBool": "Poison Pouch",
+        "Extra": null
+      },
+      {
+        "Type": 14,
+        "Act3": false,
+        "GetBool": "qst|Wood Witch Curse|0",
+        "Extra": "inv|Wood Witch Item|1"
+      },
+      {
+        "Type": 14,
+        "Act3": false,
+        "GetBool": "qst|Wood Witch Curse|0",
+        "Extra": "pdb|WoodWitchGaveMandrake"
+      }
+    ]
+  },
+  {
+    "Name": "Brother",
+    "Hide": false,
+    "Right": true,
+    "Pins": [
+      {
+        "Type": 18,
+        "Act3": false,
+        "GetBool": "Tack",
+        "Extra": null
+      },
+      {
+        "Type": 15,
+        "Act3": false,
+        "GetBool": "inv|Extractor Machine Pins",
+        "Extra": "qst|Doctor Curse Cure|1"
+      }
+    ]
+  },
+  {
+    "Name": "BlueScientist",
+    "Hide": false,
+    "Right": true,
+    "Pins": [
+      {
+        "Type": 18,
+        "Act3": false,
+        "GetBool": "Lifeblood Syringe",
+        "Extra": null
+      },
+      {
+        "Type": 35,
+        "Act3": true,
+        "GetBool": "inv|Plasmium Gland",
+        "Extra": null
       }
     ]
   }

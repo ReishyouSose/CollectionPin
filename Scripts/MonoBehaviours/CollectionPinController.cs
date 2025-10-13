@@ -97,9 +97,12 @@ namespace CollectionPin
                     break;
             }
 
+            bool isContainerPin = Pin == PinType.ContainerPin;
+            if (isContainerPin && !string.IsNullOrEmpty(ID) && !pd.GetBool(ID))
+                return false;
             if (CollectedCheck(pd))
             {
-                if (Pin != PinType.ContainerPin)
+                if (!isContainerPin)
                     Collected = true;
                 return null;
             }
@@ -107,7 +110,7 @@ namespace CollectionPin
         }
         public override string ToString()
         {
-            return $"Pin:{Pin} Ability:{Ability} MapUnlock:{MapUnlock} GetBool:{GetBool}";
+            return $"Pin:{Pin} Ability:{Ability} MapUnlock:{MapUnlock} GetBool:{GetBool} Key: {Key} ID: {ID}";
         }
     }
 }

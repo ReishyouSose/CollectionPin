@@ -50,6 +50,7 @@ namespace CollectionPin.Scripts.MonoBehaviours
                     break;
                 case "qst":
                     ValidType = DataValidType.QuestState;
+                    Key = info[1];
                     ID = info[2];
                     break;
                 default:
@@ -176,8 +177,6 @@ namespace CollectionPin.Scripts.MonoBehaviours
                             return true;
                     }
                 case DataValidType.Container:
-                    if (!string.IsNullOrEmpty(ID) && !pd.GetBool(ID))
-                        return false;
                     return GetComponent<PinContainer>().IsAllCollected();
             }
             return false;

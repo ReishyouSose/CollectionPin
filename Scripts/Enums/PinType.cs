@@ -32,6 +32,7 @@
         RuneHarp,//符文竖琴
         Cylinder,//音筒
         ArcanaEgg,//神秘蛋
+        PlasmiumGland = 35,//生质液腺
         SimpleKey = 36,
         SlabA,//怠惰
         SlabB,//异端
