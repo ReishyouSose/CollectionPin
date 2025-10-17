@@ -52,7 +52,12 @@ namespace CollectionPin
             if (Collected)
                 return null;
 
-            if (ModConfig.Ins.PinsFilter.TryGetValue(Pin, out var entry) && !entry.Value)
+            if (Pin == PinType.Container)
+                return false;
+
+            var config = ModConfig.Ins;
+
+            if (config.PinsFilter.TryGetValue(Pin, out var entry) && !entry.Value)
                 return false;
 
             PlayerData pd = PlayerData.instance;
@@ -60,10 +65,9 @@ namespace CollectionPin
             if (!string.IsNullOrEmpty(map) && MapUnlock != map)
                 return false;
 
-            if (ExtraCondition?.Invoke(pd) == false)
+            if (config.ExtraLock.Value && ExtraCondition?.Invoke(pd) == false)
                 return false;
 
-            var config = ModConfig.Ins;
             bool isMapUnlock = pd.GetBool(MapUnlock);
             if (Pin == PinType.Map)
             {
@@ -100,6 +104,7 @@ namespace CollectionPin
             bool isContainerPin = Pin == PinType.ContainerPin;
             if (isContainerPin && !string.IsNullOrEmpty(ID) && !pd.GetBool(ID))
                 return false;
+
             if (CollectedCheck(pd))
             {
                 if (!isContainerPin)

@@ -26,15 +26,16 @@ namespace CollectionPin.Scripts.MonoBehaviours
             if (Collected)
                 return false;
 
-            if (ModConfig.Ins.PinsFilter.TryGetValue(Pin, out var entry) && !entry.Value)
+            var config = ModConfig.Ins;
+            if (config.PinsFilter.TryGetValue(Pin, out var entry) && !entry.Value)
                 return false;
 
             var pd = PlayerData.instance;
 
-            if (Act3 && !pd.act3_wokeUp)
+            if (config.ExtraLock.Value && ExtraCondition?.Invoke(pd) == false)
                 return false;
 
-            if (ExtraCondition?.Invoke(pd) == false)
+            if (Act3 && !pd.act3_wokeUp)
                 return false;
 
             if (CollectedCheck(pd))

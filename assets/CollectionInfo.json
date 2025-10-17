@@ -390,8 +390,8 @@
       },
       {
         "Type": 7,
-        "X": -992.730164,
-        "Y": 4.14263439,
+        "X": -1003.7738,
+        "Y": 4.26374626,
         "Ability": 0,
         "GetBool": "pdb|visitedHalls",
         "Extra": null
@@ -450,6 +450,14 @@
         "Y": 7.70743752,
         "Ability": 0,
         "GetBool": "Enclave_Quest|visitedEnclave",
+        "Extra": null
+      },
+      {
+        "Type": 7,
+        "X": -1003.7738,
+        "Y": 4.26374626,
+        "Ability": 0,
+        "GetBool": "pdb|visitedHalls",
         "Extra": null
       }
     ],
